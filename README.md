@@ -17,11 +17,9 @@ Xserver へ ads.txt だけを自動アップロードします（Claudeはサー
 | `FTP_SERVER` | `sv2232.xserver.jp` |
 | `FTP_USERNAME` | Xserverのサーバー(FTP)アカウント |
 | `FTP_PASSWORD` | Xserverのサーバー(FTP)パスワード |
-| `FTP_REMOTE_DIR` | motonator.com の public_html への絶対パス（例: `/motonator.com/public_html/`）|
+| `FTP_REMOTE_DIR` | `/motonator.com/public_html/` |
 
-`FTP_REMOTE_DIR` はXserverのサーバーパネル「ファイルマネージャー」か、
-FTPクライアント（FileZilla等）で実際のディレクトリ構成を確認して正確な値を入れてください
-（サーバー内に複数ドメインがある場合、ドメインごとにディレクトリが分かれています）。
+上記4つのSecretsは登録済みです。
 
 登録後、このリポジトリに push するか、Actionsタブから
 「Deploy ads.txt to Xserver」を手動実行（workflow_dispatch）すればデプロイされます。

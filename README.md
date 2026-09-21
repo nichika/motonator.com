@@ -3,7 +3,7 @@
 ## ① 技術的な優先修正
 
 ### 1. ads.txt（作成済み・要デプロイ設定）
-`ads.txt` に AdSense のパブリッシャーID（`pub-4449490024488807`）を記載済みです。
+`public/ads.txt` に AdSense のパブリッシャーID（`pub-4449490024488807`）を記載済みです。
 `.github/workflows/deploy-ads-txt.yml` が `main` ブランチに push されると
 Xserver へ ads.txt だけを自動アップロードします（Claudeはサーバーのパスワードを
 一切扱わないよう、GitHub Actions 経由のデプロイにしています）。

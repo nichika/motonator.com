@@ -2,13 +2,13 @@
 	<div class="container">
 		<div class="main">
 			<?php
-			if($_GET['s']){
+			if(!empty($_GET['s'])){
 				$search_title = 'フリーワード: ' . $_GET['s'];
-			} elseif($_GET['genre']) {
+			} elseif(!empty($_GET['genre'])) {
 				$search_title = 'タグ：' . $_GET['genre'];
-			} elseif($_GET['work']) {
+			} elseif(!empty($_GET['work'])) {
 				$search_title = 'タグ：' . $_GET['work'];
-			} elseif($_GET['etc']) {
+			} elseif(!empty($_GET['etc'])) {
 				$search_title = 'タグ：' . $_GET['etc'];
 			} else {
 				$search_title = 'すべての記事';

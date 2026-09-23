@@ -1,10 +1,11 @@
-name: Deploy ads.txt to Xserver
+name: Deploy site files to Xserver
 
 on:
   push:
     branches: [main]
     paths:
-      - "public/ads.txt"
+      - "public_html/ads.txt"
+      - "public_html/wp-content/themes/motonator/**"
   workflow_dispatch: {}
 
 jobs:
@@ -13,12 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Upload ads.txt via FTPS
+      - name: Upload changed files via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir: ./public/
+          local-dir: ./public_html/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}

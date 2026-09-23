@@ -1,0 +1,14 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "home";
+
+$main-color: #f7931e;
+$main-pc-width: 960px;
+
+@mixin clearfix {
+	&:after {
+		content: '';
+		clear: both;
+		display: block;
+	}
+}

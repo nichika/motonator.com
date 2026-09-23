@@ -1,0 +1,245 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input {
+	vertical-align: bottom;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+body {
+	color: #544;
+	font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック", YuGothic, "メイリオ", "Meiryo", sans-serif;
+}
+
+a {
+	color: #544;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+.common_header {
+	background-color: $main-color;
+	text-align: center;
+	padding: 20px 0 30px;
+	h2 {
+		color: #fff;
+		font-size: 12px;
+		margin-bottom: 28px;
+		br {
+			display: none;
+		}
+	}
+	.logo {
+		img {
+			height: 60px;
+		}
+	}
+}
+
+
+.sub {
+	float: right;
+	width: 240px;
+	text-align: left;
+	.search {
+		padding: 20px;
+		background-color: lighten($main-color, 40%);
+		h2 {
+			border-left: 5px solid $main-color;
+			padding-left: 10px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		form {
+			margin-top: 20px;
+			@include clearfix;
+			input {
+				display: block;
+				float: left;
+				width: 150px;
+				border: 1px solid #ccc;
+				background-color: #fff;
+				font-size: 16px;
+				height: 30px;
+				padding: 6px;
+				line-height: 1;
+			}
+			button {
+				margin-left: 10px;
+				width: 40px;
+				display: block;
+				float: left;
+				background-color: $main-color;
+				color: #fff;
+				font-size: 14px;
+				padding: 8px 0;
+				text-align: center;
+				border-radius: 5px;
+				border: none;
+				line-height: 1;
+			}
+		}
+	}
+	.post {
+		padding: 20px;
+		background-color: lighten($main-color, 40%);
+		&.latest_post {
+			margin-top: 30px;
+		}
+		&.popular_post {
+			margin-top: 30px;
+		}
+		h2 {
+			border-left: 5px solid $main-color;
+			padding-left: 10px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.post_list {
+			margin-top: 20px;
+			> li {
+				margin-top: 10px;
+				&:first-child {
+					margin-top: 0;
+				}
+				a {
+					display: table;
+					.thumbnail {
+						display: table-cell;
+						padding-right: 10px;
+						width:30px;
+						max-height:30px;
+						img {
+							width: 30px;
+						}
+					}
+					.title {
+						display: table-cell;
+						vertical-align: middle;
+						font-size: 12px;
+						line-height: 15px;
+					}
+				}
+			}
+		}
+	}
+	.test_googlead {
+		margin-top: 30px;
+		background-color: #ddd;
+		padding: 50px 0;
+		text-align: center;
+	}
+}
+
+footer {
+	text-align: center;
+	background-color: $main-color;
+	font-size: 12px;
+	color: #fff;
+	padding: 9px 0;
+}
+
+@media (max-width: 640px) {
+	.common_header {
+		padding: 10px;
+		h2 {
+			margin-bottom: 10px;
+			font-size: 10px;
+			line-height: 1.2;
+			br {
+				display: inline;
+			}
+		}
+		.logo {
+			img {
+				height: 36px;
+			}
+		}
+	}
+	.sub {
+		margin-top: 30px;
+		float: none;
+		width: auto;
+		.search {
+			padding: 0;
+			background: none;
+			h2 {
+				border-left: 5px solid $main-color;
+			}
+			form {
+				margin-top: 15px;
+				padding-right: 60px;
+				position: relative;
+				@include clearfix;
+				input {
+					width: 100%;
+				}
+				button {
+					width: 50px;
+					font-size: 16px;
+					padding: 7px;
+					float: none;
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+			}
+		}
+		.post {
+			padding: 0;
+			background: none;
+			&.latest_post {
+				margin-top: 30px;
+			}
+			&.popular_post {
+				margin-top: 30px;
+			}
+			h2 {
+				border-left: 5px solid $main-color;
+			}
+			.post_list {
+				margin-top: 15px;
+				> li {
+					margin-top: 10px;
+					&:first-child {
+						margin-top: 0;
+					}
+					a {
+						display: table;
+						border-radius: 5px;
+						width: 100%;
+						background-color: lighten($main-color, 40%);
+						.thumbnail {
+							width: 30px;
+							display: table-cell;
+							padding: 10px;
+							img {
+								width: 30px;
+							}
+						}
+						.title {
+							padding: 10px 10px 10px 0;
+							display: table-cell;
+							vertical-align: middle;
+							font-size: 12px;
+							line-height: 15px;
+						}
+					}
+				}
+			}
+		}
+		.test_googlead {
+			margin-top: 30px;
+			background-color: #ddd;
+			padding: 50px 0;
+			text-align: center;
+		}
+	}
+}

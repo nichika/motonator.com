@@ -1,17 +1,35 @@
 # motonator.com 改善作業リポジトリ
 
-## ① 技術的な優先修正
+## リポジトリの構成
 
-### 1. ads.txt（作成済み・要デプロイ設定）
-`public/ads.txt` に AdSense のパブリッシャーID（`pub-4449490024488807`）を記載済みです。
-`.github/workflows/deploy-ads-txt.yml` が `main` ブランチに push されると
-Xserver へ ads.txt だけを自動アップロードします（Claudeはサーバーのパスワードを
-一切扱わないよう、GitHub Actions 経由のデプロイにしています）。
+このリポジトリは motonator.com の**全ファイルではなく**、実際に編集する必要がある部分だけを管理しています。
 
-#### GitHub側の設定（ユーザー作業）
-リポジトリの Settings → Secrets and variables → Actions → New repository secret で、
-以下4つを**ご自身で**登録してください（このチャットには貼らないでください）。
+```
+public_html/
+  ads.txt                          AdSense収益化に必須
+  .htaccess                        参考用（WordPressが自動生成する部分あり）
+  wp-content/themes/motonator/     カスタムテーマ本体（ここを編集する）
+```
 
+WordPress本体（wp-admin, wp-includes）、標準プラグイン、メディア（wp-content/uploads）、
+`wp-config.php`（DB接続情報などの機密情報を含む）は**意図的に含めていません**。
+理由：
+- 本体・プラグインはWordPress管理画面から直接更新するもので、バージョン管理の対象にする必要がない
+- メディアは巨大でGit向きではない
+- `wp-config.php` にはデータベースのパスワード等が平文で入っており、絶対にコミットしてはいけない
+
+`.gitignore` でもこれらを除外するようにしていますが、今後サイト全体のバックアップZIPを
+このフォルダに展開する場合は、コミット前に `git status` で意図しないファイルが
+含まれていないか必ず確認してください。
+
+## デプロイの仕組み
+
+`.github/workflows/deploy-site.yml` が、`public_html/ads.txt` または
+`public_html/wp-content/themes/motonator/` 以下に変更をpushすると、
+GitHub Actions経由でXserverへFTPSアップロードします。
+サーバーのパスワードはGitHub Secretsに保存されており、Claude（AI）は一切参照できません。
+
+### 必要なGitHub Secrets（設定済み）
 | Secret名 | 値 |
 |---|---|
 | `FTP_SERVER` | `sv2232.xserver.jp` |
@@ -19,29 +37,27 @@ Xserver へ ads.txt だけを自動アップロードします（Claudeはサー
 | `FTP_PASSWORD` | Xserverのサーバー(FTP)パスワード |
 | `FTP_REMOTE_DIR` | `/motonator.com/public_html/` |
 
-上記4つのSecretsは登録済みです。
+## 今後の運用
 
-登録後、このリポジトリに push するか、Actionsタブから
-「Deploy ads.txt to Xserver」を手動実行（workflow_dispatch）すればデプロイされます。
+- テーマファイル（`header.php`、`single.php`など）の修正は、このリポジトリ内で
+  直接編集してpushすれば自動でサーバーに反映されます（wp-adminでの直接編集は不要になります）
+- 新規記事の自動投稿については別途、WordPress REST API + アプリケーションパスワードを
+  使った仕組みを検討中（進捗はこのREADMEに追記していきます）
 
-デプロイ後、`https://motonator.com/ads.txt` にアクセスして中身が表示されるか確認し、
-AdSense管理画面の「サイトの収益化」→「ads.txt」ステータスが「見つかりました」になっているか確認してください。
+---
 
-### 2. AdSenseの配信状況確認（要ユーザー作業）
-- AdSense管理画面 → 「サイトの状態」でポリシー違反や制限がないか確認
-- 現在のコードは `enable_page_level_ads: true` の旧式スニペットのみで、
-  ページ内には広告ユニットが実質1枠しかなく `unfilled` でした。
-  ads.txt反映後も改善しない場合は、AdSense管理画面で最新の自動広告(Auto ads)
-  スニペットを再取得し、WordPressのテーマ（header.php など）や
-  「Ad Inserter」「Site Kit」等のプラグインで設置し直すことを推奨します。
+## ① 技術的な優先修正（完了済み）
 
-### 3. アクセス解析の整理（要ユーザー作業）
-現在、GA4（`G-WEVBH926YX`）と2023年7月に計測停止した旧Universal Analytics
-（`UA-120539212-1`）のタグが両方読み込まれています。
-WordPressのテーマ/プラグイン側でUAのトラッキングコードを削除し、GA4のみに統一してください。
-（旧UAのビューでアクセス数を見ていた場合、実際のアクセスは反映されていません。GA4側を確認してください）
+- ✅ ads.txt 設置・デプロイ（AdSenseパブリッシャーID: `pub-4449490024488807`）
+- ✅ `header.php` 内の古いUniversal Analyticsタグ（`UA-120539212-1`）を削除、GA4のみに整理
+- ✅ WordPress本体・プラグインを最新版に更新
+- ✅ Google Search Console登録・`sitemap_index.xml` 送信
 
-### 4. Search Console確認（要ユーザー作業）
-- Google Search Console にプロパティ登録済みか確認
-- 未登録なら登録し、`https://motonator.com/sitemap_index.xml` を送信
-- 「ページ」レポートでインデックス除外の理由がないか確認（7年更新なしのため落ちている可能性あり）
+## ② AdSense再申請（保留中）
+
+サイトに埋め込まれていたAdSenseアカウント自体が却下・利用不可だったため、
+新規申請の前にまずサイトのコンテンツを充実させる方針に変更。
+
+## ③ コンテンツ拡充（進行中）
+
+2019年以降のネットスラング・人気作品の名言記事を新規追加中。

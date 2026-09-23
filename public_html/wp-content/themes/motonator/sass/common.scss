@@ -1,0 +1,32 @@
+@import "compass/css3";
+@import "config";
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input {
+	vertical-align: bottom;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+body {
+	color: #544;
+}
+
+a {
+	color: #544;
+}
+
+footer {
+	text-align: center;
+	background-color: $main-color;
+	font-size: 12px;
+	color: #fff;
+	padding: 9px 0;
+}

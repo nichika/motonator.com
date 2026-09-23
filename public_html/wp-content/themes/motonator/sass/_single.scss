@@ -1,0 +1,373 @@
+.single {
+	.container {
+		width: $main-pc-width;
+		margin: 0 auto;
+		padding: 40px 0;
+		@include clearfix;
+		.main {
+			float: left;
+			width: 680px;
+			.headline {
+				padding-left: 20px;
+				border-left: 10px solid $main-color;
+				margin-bottom: 30px;
+				h1 {
+					font-size: 20px;
+					font-weight: bold;
+					line-height: 1.25;
+					b {
+						font-size: 32px;
+					}
+				}
+				.ruby {
+					line-height: 1.25;
+					margin-top: 10px;
+					font-size: 14px;
+					color: #999;
+				}
+				.tag {
+					margin-top: 5px;
+					.tag_list {
+						@include clearfix;
+						> li {
+							float: left;
+							margin: 5px 5px 0 0;
+							a {
+								display: block;
+								background-color: $main-color;
+								font-size: 12px;
+								color: #fff;
+								text-decoration: none;
+								padding: 4px;
+								border-radius: 5px;
+							}
+						}
+					}
+				}
+			}
+			h2 {
+				line-height: 1.25;
+				padding-left: 50px;
+				background: url(img/headline_icon.png) left center no-repeat;
+				font-size: 20px;
+				padding-bottom: 10px;
+				border-bottom: 4px solid $main-color;
+				b {
+					font-weight: bold;
+				}
+			}
+			.content {
+				font-size: 16px;
+				margin-top: 20px;
+				line-height: 1.75;
+				@include clearfix;
+			}
+			.mean {
+				img {
+					float: left;
+					margin: 0 20px 15px 0;
+				}
+			}
+			.detail {
+				margin-top: 30px;
+				img {
+					float: right;
+					margin: 0 0 15px 20px;
+					width: 240px;
+				}
+				h3 {
+					line-height: 1.25;
+					font-weight: bold;
+					margin-top: 20px;
+					border-bottom: 2px solid $main-color;
+					padding-bottom: 5px;
+					color: $main-color;
+				}
+				p {
+					margin-top: 15px;
+				}
+				blockquote {
+					position: relative;
+					margin-top: 15px;
+					padding: 25px;
+					background: #eee url(img/blockquote_before.png) 15px 15px no-repeat;
+					&:after {
+						content: '';
+						display: block;
+						width: 32px;
+						height: 28px;
+						background: url(img/blockquote_after.png) 0 0 no-repeat;
+						position: absolute;
+						bottom: 15px;
+						right: 15px;
+					}
+				}
+			}
+			.share {
+				margin-top: 30px;
+				border: 4px solid $main-color;
+				padding: 21px 26px 26px;
+				h3 {
+					color: $main-color;
+					text-align: center;
+					font-weight: bold;
+					font-size: 20px;
+					line-height: 1;
+					padding-bottom: 25px;
+					border-bottom: 2px solid #ddd;
+				}
+				ul {
+					@include clearfix;
+					margin-top: 25px;
+					> li {
+						width: 33.333%;
+						float: left;
+						a {
+							font-size: 14px;
+							display: block;
+							height: 50px;
+							text-decoration: none;
+							padding: 3px 0 0 60px;
+							background-size: 50px;
+							background-repeat: no-repeat;
+							background-position: 0 0;
+							b {
+								font-size: 20px;
+								font-weight: bold;
+								line-height: 1.25;
+							}
+						}
+						&.twitter {
+							a {
+								background-image: url(img/twitter_icon.png);
+							}
+						}
+						&.facebook {
+							a {
+								background-image: url(img/facebook_icon.png);
+							}
+						}
+						&.line {
+							a {
+								background-image: url(img/line_icon.png);
+							}
+						}
+					}
+				}
+			}
+			.relation {
+				margin-top: 30px;
+				h3 {
+					line-height: 1.25;
+					font-weight: bold;
+					margin-top: 20px;
+					border-bottom: 2px solid $main-color;
+					padding-bottom: 5px;
+					color: $main-color;
+				}
+				.relation_post_list {
+					> li {
+						@include clearfix;
+						margin-top: 20px;
+						background-color: lighten($main-color, 35%);
+						padding: 20px 20px 20px 90px;
+						border-radius: 5px;
+						min-height: 100px;
+						position: relative;
+						.thumbnail {
+							width: 60px;
+							position: absolute;
+							left: 20px;
+							top: 20px;
+							img {
+								width: 100%;
+							}
+						}
+						.title {
+							line-height: 1.5;
+							font-size: 12px;
+							b {
+								font-size: 20px;
+								font-weight: bold;
+							}
+						}
+						.tag {
+							margin-top: 2px;
+							.tag_list {
+								@include clearfix;
+								> li {
+									float: left;
+									margin: 5px 5px 0 0;
+									a {
+										display: block;
+										background-color: $main-color;
+										font-size: 12px;
+										color: #fff;
+										text-decoration: none;
+										padding: 4px;
+										border-radius: 5px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 639px) {
+	.single {
+		.container {
+			width: auto;
+			padding: 20px 10px 30px;
+			@include clearfix;
+			.main {
+				float: none;
+				width: auto;
+				.headline {
+					padding-left: 10px;
+					border-left: 4px solid $main-color;
+					margin-bottom: 20px;
+					h1 {
+						font-size: 14px;
+						b {
+							font-size: 20px;
+						}
+					}
+					.ruby {
+						font-size: 12px;
+					}
+				}
+				h2 {
+					padding-left: 40px;
+					background-size: 30px;
+					font-size: 16px;
+					padding-bottom: 5px;
+					border-bottom: 2px solid $main-color;
+					b {
+						font-weight: bold;
+					}
+				}
+				.content {
+					font-size: 14px;
+					margin-top: 10px;
+					line-height: 1.75;
+					@include clearfix;
+				}
+				.mean {
+					img {
+						float: left;
+						width: 60px;
+						margin: 0 10px 5px 0;
+					}
+				}
+				.detail {
+					margin-top: 20px;
+					img {
+						float: none;
+						margin: 0;
+						width: 100%;
+					}
+					h3 {
+						line-height: 1.25;
+						font-weight: bold;
+						margin-top: 20px;
+						border-bottom: 1px solid $main-color;
+						padding-bottom: 5px;
+						color: $main-color;
+					}
+					p {
+						margin-top: 10px;
+					}
+					blockquote {
+						margin-top: 10px;
+						padding: 15px;
+						background: #eee url(img/blockquote_before.png) 10px 10px no-repeat;
+						background-size: 16px;
+						&:after {
+							width: 16px;
+							height: 14px;
+							background: url(img/blockquote_after.png) 0 0 no-repeat;
+							background-size: 16px;
+							bottom: 10px;
+							right: 10px;
+						}
+					}
+				}
+				.share {
+					margin-top: 20px;
+					border: 2px solid $main-color;
+					padding: 10px 8px 8px;
+					h3 {
+						font-size: 16px;
+						padding-bottom: 10px;
+						border-bottom: 1px solid #ddd;
+					}
+					ul {
+						margin-top: 10px;
+						> li {
+							margin-top: 10px;
+							width: auto;
+							float: none;
+							&:first-child {
+								margin-top: 0;
+							}
+							a {
+								font-size: 16px;
+								height: 60px;
+								padding: 22px 10px 10px 60px;
+								background-size: 40px;
+								background-position: 10px 10px;
+								background-color: lighten($main-color, 40%);
+								border-radius: 5px;
+								b {
+									font-size: 16px;
+									font-weight: bold;
+									line-height: 1.25;
+								}
+								br {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+				.relation {
+					margin-top: 30px;
+					h3 {
+						line-height: 1.25;
+						font-weight: bold;
+						margin-top: 20px;
+						border-bottom: 2px solid $main-color;
+						padding-bottom: 5px;
+						color: $main-color;
+					}
+					.relation_post_list {
+						> li {
+							@include clearfix;
+							margin-top: 10px;
+							background-color: lighten($main-color, 35%);
+							padding: 10px 10px 10px 80px;
+							border-radius: 5px;
+							min-height: 80px;
+							.thumbnail {
+								width: 60px;
+								position: absolute;
+								left: 10px;
+								top: 10px;
+							}
+							.title {
+								b {
+									font-size: 16px;
+									font-weight: bold;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

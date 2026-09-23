@@ -1,0 +1,302 @@
+.home {
+	.home_header {
+		position: relative;
+		z-index: 1;
+		padding: 20px 0 30px;
+		background-color: rgba($main-color, 0.75);
+		text-align: center;
+		h1 {
+			color: #fff;
+			font-size: 12px;
+			margin-bottom: 28px;
+			br {
+				display: none;
+			}
+		}
+		.search {
+			width: 720px;
+			margin: 28px auto 0;
+			padding: 30px 20px 20px 120px;
+			min-height: 120px;
+			border-radius: 10px;
+			background: rgba(#fff, 0.9) url(img/circle_robot_illust.png) 20px 20px no-repeat;
+			background-size: 80px;
+			.text {
+				text-align: left;
+				font-size: 14px;
+			}
+			form {
+				margin-top: 15px;
+				@include clearfix;
+				input {
+					display: block;
+					float: left;
+					width: 400px;
+					border: 1px solid #ccc;
+					background-color: #fff;
+					font-size: 16px;
+					height: 30px;
+					padding: 6px;
+					line-height: 1;
+				}
+				button {
+					font-weight: bold;
+					margin-left: 10px;
+					width: 100px;
+					display: block;
+					float: left;
+					background-color: $main-color;
+					color: #fff;
+					font-size: 16px;
+					padding: 7px 0;
+					text-align: center;
+					border-radius: 5px;
+					border: none;
+					line-height: 1;
+				}
+			}
+		}
+	}
+	.thumbnail_list {
+		width: 100%;
+		min-width: 800px;
+		height: 320px;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include clearfix;
+		> li {
+			-webkit-background-size: cover;
+			background-size: cover;
+			min-width: 160px;
+			width: 20%;
+			padding-bottom: 20%;
+			float: left;
+		}
+	}
+	.about {
+		background-color: $main-color;
+		color: #fff;
+		.inner {
+			width: $main-pc-width;
+			margin: 0 auto;
+			padding: 25px 240px 25px 0;
+			background: url(img/about_robot_illust.png) right 10px no-repeat;
+			h2 {
+				font-size: 20px;
+				font-weight: bold;
+				margin-bottom: 10px;
+				letter-spacing: 0.2em;
+			}
+			p {
+				font-size: 14px;
+				line-height: 1.75;
+				margin-bottom: 10px;
+			}
+			a {
+				font-size: 14px;
+				font-weight: bold;
+				color: #fff;
+				&:before {
+					content: '» ';
+				}
+			}
+		}
+	}
+	.latest_post {
+		padding: 40px 0;
+		text-align: center;
+		h2 {
+			font-size: 32px;
+			font-weight: bold;
+			letter-spacing: 0.2em;
+			padding-bottom: 10px;
+			border-bottom: 4px solid $main-color;
+			display: inline-block;
+			margin: 0 auto;
+		}
+		.post_list {
+			width: $main-pc-width;
+			margin: 10px auto 0;
+			text-align: left;
+			> li {
+				margin-top: 20px;
+				width: 300px;
+				background-color: lighten($main-color, 35%);
+				padding: 20px;
+				border-radius: 5px;
+				.thumbnail {
+					margin-bottom: 10px;
+					&.no_image {
+						display: none;
+					}
+					img {
+						width: 100%;
+					}
+				}
+				.title {
+					line-height: 1.5;
+					font-size: 12px;
+					b {
+						font-size: 20px;
+						font-weight: bold;
+					}
+				}
+				.tag {
+					margin-top: 5px;
+					.tag_list {
+						@include clearfix;
+						> li {
+							float: left;
+							margin: 5px 5px 0 0;
+							a {
+								display: block;
+								background-color: $main-color;
+								font-size: 12px;
+								color: #fff;
+								text-decoration: none;
+								padding: 4px;
+								border-radius: 5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 639px) {
+	.home {
+		.home_header {
+			padding: 10px;
+			h1 {
+				margin-bottom: 10px;
+				font-size: 10px;
+				line-height: 1.2;
+				br {
+					display: inline;
+				}
+			}
+			.logo {
+				img {
+					height: 36px;
+				}
+			}
+			.search {
+				width: auto;
+				margin: 10px 0 0;
+				padding: 10px;
+				background: rgba(#fff, 0.9) url(img/circle_robot_illust.png) 10px 10px no-repeat;
+				background-size: 40px;
+				min-height: auto;
+				.text {
+					padding: 2px 0 0 50px;
+					text-align: none;
+					font-size: 12px;
+					line-height: 18px;
+					min-height: 40px;
+				}
+				form {
+					margin-top: 10px;
+					padding-right: 60px;
+					position: relative;
+					@include clearfix;
+					input {
+						float: none;
+						width: 100%;
+					}
+					button {
+						position: absolute;
+						top: 0;
+						right: 0;
+						margin: 0;
+						width: 50px;
+						float: none;
+					}
+				}
+			}
+		}
+		.thumbnail_list {
+			min-width: auto;
+			height: 200px;
+			> li {
+				-webkit-background-size: cover;
+				background-size: cover;
+				min-width: auto;
+				width: 50%;
+				padding-bottom: 50%;
+				float: left;
+			}
+		}
+		.about {
+			.inner {
+				width: auto;
+				padding: 0;
+				background: url(img/about_robot_illust.png) right top no-repeat;
+				background-size: 100px;
+				position: relative;
+				h2 {
+					position: absolute;
+					top: 15px;
+					left: 10px;
+					font-size: 14px;
+					margin-bottom: 0;
+					letter-spacing: 0;
+				}
+				p {
+					display: none;
+				}
+				a {
+					margin-top: 0;
+					display: block;
+					padding: 35px 10px 15px;
+					font-weight: normal;
+				}
+			}
+		}
+		.latest_post {
+			padding: 20px 10px;
+			h2 {
+				font-size: 24px;
+				padding-bottom: 5px;
+			}
+			.post_list {
+				width: auto;
+				margin-top: 20px;
+				> li {
+					width: auto;
+					margin-top: 10px;
+					padding: 10px 10px 10px 80px;
+					min-height: 80px;
+					position: relative;
+					&:first-child {
+						margin-top: 0;
+					}
+					&.google_ad {
+						padding: 10px;
+					}
+					.thumbnail {
+						position: absolute;
+						top: 10px;
+						left: 10px;
+						width: 60px;
+						&.no_image {
+							display: block;
+						}
+						img {
+							width: 100%;
+							height: auto;
+						}
+					}
+					.title {
+						b {
+							font-size: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

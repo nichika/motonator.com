@@ -1,0 +1,224 @@
+.search {
+	.headline {
+		border-left: 10px solid $main-color;
+		padding-left: 20px;
+		line-height: 1.25;
+		h1 {
+			font-size: 32px;
+			font-weight: bold;
+		}
+		.ruby {
+			margin-top: 10px;
+			font-size: 14px;
+			color: #999;
+		}
+	}
+	.container {
+		padding: 40px 0;
+		width: $main-pc-width;
+		margin: 0 auto;
+		@include clearfix;
+		.main {
+			float: left;
+			width: 680px;
+			.post {
+				text-align: left;
+				margin-top: 30px;
+				&.no_result {
+					text-align: center;
+					font-size: 14px;
+				}
+				h3 {
+					line-height: 1.25;
+					font-weight: bold;
+					margin-top: 20px;
+					border-bottom: 2px solid $main-color;
+					padding-bottom: 5px;
+					color: $main-color;
+				}
+				.post_list {
+					> li {
+						@include clearfix;
+						margin-top: 20px;
+						background-color: lighten($main-color, 35%);
+						padding: 25px 25px 25px 120px;
+						border-radius: 5px;
+						position: relative;
+						min-height: 130px;
+						.thumbnail {
+							width: 80px;
+							position: absolute;
+							left: 25px;
+							top: 25px;
+							img {
+								width: 100%;
+							}
+						}
+						.title {
+							line-height: 1.5;
+							font-size: 12px;
+							b {
+								font-size: 20px;
+								font-weight: bold;
+							}
+						}
+						.tag {
+							margin-top: 5px;
+							.tag_list {
+								@include clearfix;
+								> li {
+									float: left;
+									margin: 5px 5px 0 0;
+									a {
+										display: block;
+										background-color: $main-color;
+										font-size: 12px;
+										color: #fff;
+										text-decoration: none;
+										padding: 4px;
+										border-radius: 5px;
+									}
+								}
+							}
+						}
+					}
+				}
+				.wp-pagenavi {
+					margin-top: 20px;
+					text-align: center;
+					@include clearfix;
+					a {
+						border-radius: 5px;
+						display: inline-block;
+						margin: 0 5px;
+						background-color: $main-color;
+						font-size: 14px;
+						padding: 8px 10px;
+						font-weight: bold;
+						color: #fff;
+					}
+					span {
+						border-radius: 5px;
+						display: inline-block;
+						margin: 0 5px;
+						background-color: #eee;
+						font-size: 14px;
+						padding: 8px 10px;
+						font-weight: bold;
+						color: #999;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media (max-width: 639px) {
+	.search {
+		.headline {
+			border-left: 5px solid $main-color;
+			padding-left: 10px;
+			h1 {
+				font-size: 20px;
+			}
+			.ruby {
+				margin-top: 5px;
+				font-size: 12px;
+			}
+		}
+		.container {
+			padding: 20px 10px 30px;
+			width: auto;
+			.main {
+				width: auto;
+				float: none;
+				.post {
+					text-align: left;
+					margin-top: 20px;
+					&.no_result {
+						text-align: center;
+						font-size: 14px;
+					}
+					h3 {
+						line-height: 1.25;
+						font-weight: bold;
+						margin-top: 14px;
+						border-bottom: 1px solid $main-color;
+						padding-bottom: 5px;
+						color: $main-color;
+					}
+					.post_list {
+						> li {
+							@include clearfix;
+							margin-top: 10px;
+							padding: 10px 10px 10px 80px;
+							min-height: 80px;
+							.thumbnail {
+								width: 60px;
+								position: absolute;
+								left: 10px;
+								top: 10px;
+								img {
+									width: 100%;
+								}
+							}
+							.title {
+								line-height: 1.5;
+								font-size: 12px;
+								b {
+									font-size: 16px;
+									font-weight: bold;
+								}
+							}
+							.tag {
+								margin-top: 2px;
+								.tag_list {
+									@include clearfix;
+									> li {
+										float: left;
+										margin-right: 5px;
+										a {
+											display: block;
+											background-color: $main-color;
+											font-size: 12px;
+											color: #fff;
+											text-decoration: none;
+											padding: 4px;
+											border-radius: 5px;
+										}
+									}
+								}
+							}
+						}
+					}
+					.wp-pagenavi {
+						margin-top: 20px;
+						text-align: center;
+						@include clearfix;
+						a {
+							border-radius: 5px;
+							display: inline-block;
+							margin: 0 2px;
+							background-color: $main-color;
+							font-size: 12px;
+							padding: 9px 10px;
+							font-weight: bold;
+							color: #fff;
+						}
+						span {
+							border-radius: 5px;
+							display: inline-block;
+							margin: 0 2px;
+							background-color: #eee;
+							font-size: 12px;
+							padding: 9px 5px;
+							font-weight: bold;
+							color: #999;
+						}
+					}
+				}
+			}
+		}
+	}
+}

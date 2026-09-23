@@ -1,0 +1,17 @@
+name: Clear all featured images (destructive, manual only)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  clear:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Unset featured images and delete the media files
+        env:
+          WP_API_BASE: ${{ secrets.WP_API_BASE }}
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: node scripts/clear-featured-images.mjs

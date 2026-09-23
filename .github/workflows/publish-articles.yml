@@ -19,7 +19,17 @@ jobs:
       - name: Diagnose connectivity to the WP REST API
         env:
           WP_API_BASE: ${{ secrets.WP_API_BASE }}
-        run: curl -v --max-time 20 "$WP_API_BASE/wp/v2/posts" || true
+        run: curl -sS --max-time 20 "$WP_API_BASE/wp/v2/posts" -o /dev/null -w "anonymous GET /wp/v2/posts -> %{http_code}\n" || true
+
+      - name: Diagnose whether the Application Password is recognized
+        env:
+          WP_API_BASE: ${{ secrets.WP_API_BASE }}
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          echo "authenticated GET /wp/v2/users/me ->"
+          curl -sS --max-time 20 -u "$WP_USERNAME:$WP_APP_PASSWORD" "$WP_API_BASE/wp/v2/users/me?context=edit"
+          echo ""
 
       - name: Publish unpublished articles as drafts
         env:

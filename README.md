@@ -41,8 +41,51 @@ GitHub Actions経由でXserverへFTPSアップロードします。
 
 - テーマファイル（`header.php`、`single.php`など）の修正は、このリポジトリ内で
   直接編集してpushすれば自動でサーバーに反映されます（wp-adminでの直接編集は不要になります）
-- 新規記事の自動投稿については別途、WordPress REST API + アプリケーションパスワードを
-  使った仕組みを検討中（進捗はこのREADMEに追記していきます）
+
+## 新規記事の自動投稿の仕組み
+
+`content/articles/*.json` に記事データを追加してpushすると、
+`.github/workflows/publish-articles.yml` が WordPress REST API 経由で
+**下書き（draft）として**自動投稿します（いきなり公開はされません。内容確認後、
+wp-adminから手動で公開してください）。認証はアカウントの本パスワードではなく
+「アプリケーションパスワード」を使い、GitHub Secretsに保存するのでClaudeは値を扱いません。
+
+記事データの形式（例: `content/articles/taipa.json`）:
+```json
+{
+  "title": "タイパ",
+  "ruby": "タイムパフォーマンス",
+  "genre": ["ネット用語"],
+  "work": [],
+  "etc": ["コスパ", "Z世代", "流行語大賞"],
+  "mean": "<p>「の意味」セクションのHTML</p>",
+  "content": "<p>「の元ネタ」セクションのHTML</p>"
+}
+```
+`title` はテンプレートが自動で「〇〇の元ネタって？」と補うため、**用語そのものだけ**を入れます。
+
+### 自動投稿を有効にするための事前準備（wp-admin側、1回だけ）
+
+1. **アプリケーションパスワードを発行**
+   ユーザー（自分のアカウント）のプロフィール画面 → 一番下の「アプリケーションパスワード」欄で
+   新規発行（名前は「GitHub Actions」など任意）。表示されたパスワードをこの場ではなく、
+   GitHub Secretsに直接登録してください。
+2. **カスタム分類（genre/work/etc）をREST APIに公開**
+   プラグイン「Custom Post Type UI」→ タクソノミーの編集 →
+   `genre`・`work`・`etc` それぞれで「REST APIに表示」を有効化して保存。
+3. **ACFカスタムフィールド（ruby/mean）をREST APIに公開**
+   「カスタムフィールド」→ 該当フィールドグループを開き、「設定」タブで
+   「Show in REST API」を有効化して保存。
+
+### 追加で必要なGitHub Secrets
+| Secret名 | 値 |
+|---|---|
+| `WP_API_BASE` | `https://motonator.com/wp-json` |
+| `WP_USERNAME` | wp-adminのユーザー名 |
+| `WP_APP_PASSWORD` | 上記1で発行したアプリケーションパスワード |
+
+準備ができたら、Actionsタブから「Publish new articles to WordPress」を手動実行するか、
+`content/articles/`に新しいjsonをpushすれば自動実行されます。
 
 ---
 
@@ -61,3 +104,5 @@ GitHub Actions経由でXserverへFTPSアップロードします。
 ## ③ コンテンツ拡充（進行中）
 
 2019年以降のネットスラング・人気作品の名言記事を新規追加中。
+第一弾5記事を `content/articles/` に用意済み（タイパ／ぴえん／うっせぇわ／領域展開／全集中の呼吸）。
+上記「事前準備」完了後、自動投稿ワークフローで下書き投稿 → 内容確認のうえ公開。

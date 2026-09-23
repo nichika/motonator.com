@@ -1,0 +1,32 @@
+name: Publish new articles to WordPress
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/articles/*.json"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish unpublished articles as drafts
+        env:
+          WP_API_BASE: ${{ secrets.WP_API_BASE }}
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: node scripts/publish-articles.mjs
+
+      - name: Commit updated publish state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/.published-articles.json
+          git diff --cached --quiet || git commit -m "Record published article state [skip ci]"
+          git push

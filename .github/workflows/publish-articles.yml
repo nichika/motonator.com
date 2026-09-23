@@ -16,6 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Diagnose connectivity to the WP REST API
+        env:
+          WP_API_BASE: ${{ secrets.WP_API_BASE }}
+        run: curl -v --max-time 20 "$WP_API_BASE/wp/v2/posts" || true
+
       - name: Publish unpublished articles as drafts
         env:
           WP_API_BASE: ${{ secrets.WP_API_BASE }}

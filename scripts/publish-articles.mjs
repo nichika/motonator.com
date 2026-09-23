@@ -111,7 +111,7 @@ async function main() {
       state[file] = await publishArticle(file, article);
       changed = true;
     } catch (err) {
-      console.error(`Failed to publish ${file}:`, err.message);
+      console.error(`Failed to publish ${file}:`, err.message, err.cause || "");
       process.exitCode = 1;
     }
   }

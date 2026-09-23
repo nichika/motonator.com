@@ -57,8 +57,7 @@
 					<h2><b><?=$post->post_title?></b>の元ネタ</h2>
 					<div class="content">
 						<?php if(has_post_thumbnail()): ?>
-							<?php /* <img src="<?php echo get_the_post_thumbnail_url (); ?>" alt="<?php the_title(); ?>"> */ ?>
-							<?php // 上記コメントを外す ※Google審査用??>
+							<?php the_post_thumbnail(); ?>
 						<?php endif; ?>
 						<?php the_content(); ?>
 					</div>
@@ -120,12 +119,11 @@
 									<li>
 										<div class="thumbnail">
 											<a href="<?=$post->ID?>">
-												<?php // if(has_post_thumbnail()): ?>
-												<?php if(false): // 上記コメントを外す ※Google審査用 ?>
-													<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-												<?php else: ?>
-													<img src="<?=get_template_directory_uri()?>/img/no_image.png" alt="">
-												<?php endif; ?>
+										<?php if(has_post_thumbnail()): ?>
+											<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+										<?php else: ?>
+											<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
+										<?php endif; ?>
 											</a>
 										</div>
 										<div class="title">

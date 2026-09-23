@@ -60,14 +60,13 @@
 					<?php if(has_post_thumbnail()): ?>
 						<div class="thumbnail">
 							<a href="<?=$post->ID?>">
-								<?php // the_post_thumbnail(); ?>
-								<?php echo '<img src="' . get_template_directory_uri() .'/img/no_image.png" alt="">'; // Google審査用 ?>
+								<?php the_post_thumbnail(); ?>
 							</a>
 						</div>
 					<?php else: ?>
 						<div class="thumbnail no_image">
 							<a href="<?=$post->ID?>">
-								<img src="<?=get_template_directory_uri()?>/img/no_image.png" alt="">
+								<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
 							</a>
 						</div>
 					<?php endif; ?>

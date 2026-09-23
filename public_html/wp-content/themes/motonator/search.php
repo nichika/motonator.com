@@ -27,11 +27,10 @@
 							<li>
 								<div class="thumbnail">
 									<a href="?p=<?=$post->ID?>">
-										<?php // if(has_post_thumbnail()): ?>
-										<?php if(false): // 上記コメントを外す ※Google審査用 ?>
+										<?php if(has_post_thumbnail()): ?>
 											<?php the_post_thumbnail(array( 60, 60 )); ?>
 										<?php else: ?>
-											<img src="<?=get_template_directory_uri()?>/img/no_image.png" alt="">
+											<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
 										<?php endif; ?>
 									</a>
 								</div>

@@ -22,11 +22,10 @@
 				<li>
 					<a href="<?=$post->ID?>">
 						<div class="thumbnail">
-						<?php // if(has_post_thumbnail()): ?>
-						<?php if(false): // 上記コメントを外す ※Google審査用 ?>
+						<?php if(has_post_thumbnail()): ?>
 							<?php the_post_thumbnail(array( 30, 30 )); ?>
 						<?php else: ?>
-							<img src="<?=get_template_directory_uri()?>/img/no_image.png" alt="">
+							<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
 						<?php endif; ?>
 						</div>
 						<div class="title">
@@ -59,11 +58,10 @@
 				<li>
 					<a href="<?=$post->ID?>">
 						<div class="thumbnail">
-							<?php // if(has_post_thumbnail()): ?>
-							<?php if(false): // 上記コメントを外す ※Google審査用 ?>
+							<?php if(has_post_thumbnail()): ?>
 								<?php the_post_thumbnail(array( 30, 30 )); ?>
 							<?php else: ?>
-								<img src="<?=get_template_directory_uri()?>/img/no_image.png" alt="">
+								<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
 							<?php endif; ?>
 						</div>
 						<div class="title">

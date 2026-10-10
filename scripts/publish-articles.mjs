@@ -96,9 +96,22 @@ async function publishArticle(file, article) {
   return post.id;
 }
 
+async function loadExistingTitles() {
+  const titles = new Map();
+  for (let page = 1; ; page++) {
+    const batch = await wpFetch(
+      `/wp/v2/posts?per_page=100&page=${page}&status=publish,draft,pending,future&context=edit&_fields=id,title`
+    );
+    for (const p of batch) titles.set(p.title.raw, p.id);
+    if (batch.length < 100) break;
+  }
+  return titles;
+}
+
 async function main() {
   const state = await loadState();
   const files = (await readdir(ARTICLES_DIR)).filter((f) => f.endsWith(".json"));
+  const existingTitles = await loadExistingTitles();
 
   let changed = false;
   for (const file of files) {
@@ -107,6 +120,12 @@ async function main() {
       continue;
     }
     const article = JSON.parse(await readFile(path.join(ARTICLES_DIR, file), "utf8"));
+    if (existingTitles.has(article.title)) {
+      console.log(`Skipping ${file}: a post titled "${article.title}" already exists (id ${existingTitles.get(article.title)})`);
+      state[file] = existingTitles.get(article.title);
+      changed = true;
+      continue;
+    }
     try {
       state[file] = await publishArticle(file, article);
       changed = true;

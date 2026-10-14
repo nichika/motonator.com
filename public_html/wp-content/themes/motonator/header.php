@@ -20,7 +20,11 @@
 		enable_page_level_ads: true
 	  });
 	</script>
-	<title><?=wp_title()?></title>
+	<?php if(is_singular('post')): ?>
+		<title>「<?=esc_html(get_queried_object()->post_title)?>」の元ネタ・意味とは？｜Motonator</title>
+	<?php else: ?>
+		<title><?=wp_title()?></title>
+	<?php endif; ?>
 	<?php
 	$site_name = get_bloginfo('name');
 	$og_title = $site_name . ' - ' . get_bloginfo('description');
@@ -34,7 +38,11 @@
 		$og_source = function_exists('get_field') ? get_field('mean', $og_post->ID) : '';
 		if(!$og_source){ $og_source = $og_post->post_content; }
 		$og_text = trim(preg_replace('/\s+/u', ' ', wp_strip_all_tags($og_source)));
-		if($og_text){ $og_desc = mb_strimwidth($og_text, 0, 120, '…'); }
+		if($og_text){
+			// Drop the leading "『word』とは、" so the snippet doesn't repeat the title.
+			$og_body = preg_replace('/^[『「][^』」]*[』」](とは|は)、?/u', '', $og_text);
+			$og_desc = mb_strimwidth('「' . $og_post->post_title . '」の意味と元ネタを解説。' . $og_body, 0, 120, '…');
+		}
 		$og_url = get_permalink($og_post->ID);
 		$og_type = 'article';
 		if(has_post_thumbnail($og_post->ID)){ $og_image = get_the_post_thumbnail_url($og_post->ID, 'large'); }

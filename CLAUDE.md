@@ -16,6 +16,7 @@
 - `content/articles/*.json` : 採用された記事。pushするとGitHub ActionsがWordPressへ**下書き**投稿する
 - `content/rejected/*.json` : 不採用になった記事（理由はレポートに記録）。公開されない
 - `content/backlog.md` : ネタ候補の一覧（scoutが管理）
+- `content/reports/analytics/latest.md` : Search Console/GA4の週次スナップショット（GitHub Actionsが毎週月曜に更新。scoutが参照）
 - `content/reports/YYYY-MM-DD.md` : 日次レポート（採用/不採用と理由、校閲結果）
 - `content/marketing/YYYY-MM-DD.md` : 集客用の文案（X投稿案など。投稿は人間が行う）
 - `public_html/wp-content/themes/motonator/` : テーマ。pushでXserverへデプロイ

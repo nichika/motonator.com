@@ -1,0 +1,30 @@
+name: Fetch analytics snapshot
+
+on:
+  schedule:
+    - cron: "0 21 * * 0"   # every Monday 06:00 JST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Search Console and GA4 data
+        env:
+          GOOGLE_SA_KEY: ${{ secrets.GOOGLE_SA_KEY }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: node scripts/fetch-analytics.mjs
+
+      - name: Commit the snapshot
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          [ -d content/reports/analytics ] && git add content/reports/analytics
+          git diff --cached --quiet || (git commit -m "Update analytics snapshot [skip ci]" && git pull --rebase -q && git push)

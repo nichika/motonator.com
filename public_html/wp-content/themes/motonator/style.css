@@ -1861,3 +1861,13 @@ footer {
     padding-bottom: 5px;
   }
 }
+/* featured images: WordPress adds fixed width/height attributes, so keep the aspect ratio */
+.thumbnail img,
+.detail img {
+  height: auto;
+  max-width: 100%;
+}
+
+.detail img {
+  border-radius: 6px;
+}

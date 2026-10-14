@@ -1,0 +1,134 @@
+{
+  "generatedAt": "2026-10-14T16:21:27.280Z",
+  "searchConsole": {
+    "error": "403 {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"User does not have sufficient permission for site 'https://motonator.com/'. See also: https://support.google.com/webmasters/answer/2451999.\",\n    \"errors\": [\n      {\n        \"message\": \"User does not have sufficient permission for site 'https://motonator.com/'. See also: https://support.google.com/webmasters/answer/2451999.\",\n        \"domain\": \"global\",\n        \"reason\": \"forbidden\"\n      }\n    ]\n  }\n}\n"
+  },
+  "ga4": {
+    "range": {
+      "startDate": "28daysAgo",
+      "endDate": "yesterday"
+    },
+    "totals": {
+      "screenPageViews": 37,
+      "activeUsers": 29,
+      "sessions": 33
+    },
+    "pages": [
+      {
+        "path": "/",
+        "views": 12,
+        "users": 7
+      },
+      {
+        "path": "/86",
+        "views": 3,
+        "users": 2
+      },
+      {
+        "path": "/158",
+        "views": 2,
+        "users": 2
+      },
+      {
+        "path": "/284",
+        "views": 2,
+        "users": 2
+      },
+      {
+        "path": "/288",
+        "views": 2,
+        "users": 2
+      },
+      {
+        "path": "/118",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/120",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/128",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/170",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/186",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/202",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/204",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/263",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/274",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/293",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/294",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/321",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/326",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/64",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/74",
+        "views": 1,
+        "users": 1
+      },
+      {
+        "path": "/90",
+        "views": 1,
+        "users": 1
+      }
+    ],
+    "channels": [
+      {
+        "channel": "Organic Search",
+        "sessions": 21
+      },
+      {
+        "channel": "Direct",
+        "sessions": 12
+      }
+    ]
+  }
+}

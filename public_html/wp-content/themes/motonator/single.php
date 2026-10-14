@@ -147,6 +147,22 @@
 											<b>「<?=esc_html(get_the_title($kw_id))?>」</b>の元ネタ
 										</a>
 									</div>
+									<div class="tag">
+										<ul class="tag_list">
+											<?php foreach(['genre', 'work', 'etc'] as $kw_tax): ?>
+												<?php $kw_item_terms = get_the_terms($kw_id, $kw_tax); ?>
+												<?php if($kw_item_terms && !is_wp_error($kw_item_terms)): ?>
+													<?php foreach($kw_item_terms as $kw_item_term): ?>
+														<li>
+															<a href="<?=get_home_url()?>?s=<?=$kw_item_term->slug?>">
+																<?=esc_html($kw_item_term->name)?>
+															</a>
+														</li>
+													<?php endforeach; ?>
+												<?php endif; ?>
+											<?php endforeach; ?>
+										</ul>
+									</div>
 								</li>
 							<?php endforeach; ?>
 						</ul>

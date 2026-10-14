@@ -37,7 +37,21 @@ async function loadJson(file) {
 
 function hashArticle(article) {
   const fields = [article.title, article.ruby || "", article.genre || [], article.work || [], article.etc || [], article.mean || "", article.content];
+  // Only mix sources into the hash when present, so articles without them keep their old hash.
+  if (article.sources?.length) fields.push(article.sources);
   return createHash("sha1").update(JSON.stringify(fields)).digest("hex");
+}
+
+const escapeHtml = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+// Renders the "参考・出典" block appended to the end of the article body.
+function sourcesHtml(article) {
+  const valid = (article.sources || []).filter((s) => s?.title && /^https?:\/\//.test(s.url || ""));
+  if (!valid.length) return "";
+  const items = valid
+    .map((s) => `<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.title)}</a></li>`)
+    .join("");
+  return `<div class="sources"><p class="sources-title">参考・出典</p><ul>${items}</ul></div>`;
 }
 
 async function wpFetch(endpoint, options = {}) {
@@ -86,7 +100,7 @@ async function buildPayload(article) {
   ]);
   return {
     title: article.title,
-    content: article.content,
+    content: article.content + sourcesHtml(article),
     genre: genreIds,
     work: workIds,
     etc: etcIds,

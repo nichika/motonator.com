@@ -7,6 +7,12 @@
 					<?php if(get_field('ruby')): ?>
 						<div class="ruby">読み方：<?=get_field('ruby')?></div>
 					<?php endif; ?>
+					<div class="dates">
+						公開日：<?=get_the_date('Y.m.d')?>
+						<?php if(get_the_modified_date('Ymd') !== get_the_date('Ymd')): ?>
+							　更新日：<?=get_the_modified_date('Y.m.d')?>
+						<?php endif; ?>
+					</div>
 					<div class="tag">
 						<?php
 						$genre_tag_list = get_the_terms($post->ID, 'genre');
@@ -90,6 +96,62 @@
 						</li>
 					</ul>
 				</div>
+				<?php
+				// Same work / keyword articles first, ranked by how many terms they share.
+				$kw_current_id = $post->ID;
+				$kw_term_ids = [];
+				foreach([$work_tag_list, $etc_tag_list] as $kw_list){
+					if($kw_list && !is_wp_error($kw_list)){
+						foreach($kw_list as $kw_t){ $kw_term_ids[] = $kw_t->term_id; }
+					}
+				}
+				$kw_shown_ids = [];
+				if($kw_term_ids){
+					$kw_candidates = get_posts([
+						'posts_per_page' => 40,
+						'post_type' => 'post',
+						'fields' => 'ids',
+						'post__not_in' => [$kw_current_id],
+						'tax_query' => [
+							'relation' => 'OR',
+							['taxonomy' => 'work', 'field' => 'term_id', 'terms' => $kw_term_ids],
+							['taxonomy' => 'etc', 'field' => 'term_id', 'terms' => $kw_term_ids],
+						],
+					]);
+					$kw_scored = [];
+					foreach($kw_candidates as $kw_id){
+						$kw_shared = array_intersect($kw_term_ids, wp_get_object_terms($kw_id, ['work', 'etc'], ['fields' => 'ids']));
+						$kw_scored[$kw_id] = count($kw_shared);
+					}
+					arsort($kw_scored);
+					$kw_shown_ids = array_slice(array_keys($kw_scored), 0, 6);
+				}
+				?>
+				<?php if($kw_shown_ids): ?>
+					<div class="relation">
+						<h3>同じ作品・キーワードの記事</h3>
+						<ul class="relation_post_list">
+							<?php foreach($kw_shown_ids as $kw_id): ?>
+								<li>
+									<div class="thumbnail">
+										<a href="<?=esc_url(get_permalink($kw_id))?>">
+											<?php if(has_post_thumbnail($kw_id)): ?>
+												<img src="<?=esc_url(get_the_post_thumbnail_url($kw_id, 'thumbnail'))?>" alt="<?=esc_attr(get_the_title($kw_id))?>">
+											<?php else: ?>
+												<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
+											<?php endif; ?>
+										</a>
+									</div>
+									<div class="title">
+										<a href="<?=esc_url(get_permalink($kw_id))?>">
+											<b>「<?=esc_html(get_the_title($kw_id))?>」</b>の元ネタ
+										</a>
+									</div>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
 				<?php if($genre_tag_list): ?>
 					<?php
 					$args = [
@@ -102,7 +164,7 @@
 								'terms'    => $genre_tag_list[0]->slug,
 							],
 						],
-						'post__not_in' => [$post->ID],
+						'post__not_in' => array_merge([$post->ID], $kw_shown_ids),
 						'orderby' => 'date',
 						'order' => 'DESC',
 					];

@@ -17,6 +17,10 @@ tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch
 - 本文に画像タグは入れない。アイキャッチ用に、CLAUDE.md の「image_prompt のルール」に従った
   `image_prompt` を必ず書く（版権作品・実在人物の記事でも、人物・キャラを描かない汎用モチーフで）。
 
+## 出典（sources）
+- 調べるときに**実際に開いて確認したページ**を、`sources` に1〜3件記録する（CLAUDE.md の「sources のルール」）。
+  開けなかったページや記憶だけのURLは入れない。本文の主な事実を裏付けるページを選ぶ。
+
 ## 保存
 - `content/articles/<英数字スラッグ>.json` に保存する。既存名と重複させない。
 - スキーマ外のキーを入れない。

@@ -54,6 +54,59 @@
 	<meta name="twitter:title" content="<?=esc_attr($og_title)?>">
 	<meta name="twitter:description" content="<?=esc_attr($og_desc)?>">
 	<meta name="twitter:image" content="<?=esc_url($og_image)?>">
+	<?php
+	$ld_site = [
+		'@type' => 'WebSite',
+		'@id' => home_url('/#website'),
+		'url' => home_url('/'),
+		'name' => $site_name,
+		'inLanguage' => 'ja',
+		'potentialAction' => [
+			'@type' => 'SearchAction',
+			'target' => home_url('/?s={search_term_string}'),
+			'query-input' => 'required name=search_term_string',
+		],
+	];
+	$ld_graph = [$ld_site];
+	if(is_singular('post')){
+		$ld_id = $og_post->ID;
+		$ld_terms = [];
+		foreach(['genre', 'work', 'etc'] as $ld_tax){
+			$ld_list = get_the_terms($ld_id, $ld_tax);
+			if($ld_list && !is_wp_error($ld_list)){
+				foreach($ld_list as $ld_term){ $ld_terms[] = $ld_term->name; }
+			}
+		}
+		$ld_genres = get_the_terms($ld_id, 'genre');
+		$ld_crumbs = [
+			['@type' => 'ListItem', 'position' => 1, 'name' => 'ホーム', 'item' => home_url('/')],
+		];
+		if($ld_genres && !is_wp_error($ld_genres)){
+			$ld_crumbs[] = ['@type' => 'ListItem', 'position' => 2, 'name' => $ld_genres[0]->name, 'item' => home_url('/?s=' . $ld_genres[0]->slug)];
+		}
+		$ld_crumbs[] = ['@type' => 'ListItem', 'position' => count($ld_crumbs) + 1, 'name' => $og_post->post_title . 'の元ネタ'];
+		$ld_graph[] = [
+			'@type' => 'Article',
+			'@id' => $og_url . '#article',
+			'mainEntityOfPage' => $og_url,
+			'headline' => mb_strimwidth($og_post->post_title . 'の元ネタ', 0, 110, '…'),
+			'description' => $og_desc,
+			'image' => [$og_image],
+			'datePublished' => get_the_date('c', $ld_id),
+			'dateModified' => get_the_modified_date('c', $ld_id),
+			'inLanguage' => 'ja',
+			'keywords' => implode(',', $ld_terms),
+			'author' => ['@type' => 'Organization', 'name' => $site_name, 'url' => home_url('/')],
+			'publisher' => [
+				'@type' => 'Organization',
+				'name' => $site_name,
+				'logo' => ['@type' => 'ImageObject', 'url' => get_template_directory_uri() . '/img/icon-512.png'],
+			],
+		];
+		$ld_graph[] = ['@type' => 'BreadcrumbList', 'itemListElement' => $ld_crumbs];
+	}
+	?>
+	<script type="application/ld+json"><?=wp_json_encode(['@context' => 'https://schema.org', '@graph' => $ld_graph], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)?></script>
 </head>
 <body <?php body_class(); ?>>
 <?php if(!is_home()): ?>

@@ -1929,3 +1929,36 @@ footer {
     line-height: 1.95;
   }
 }
+
+/* ---- dates and sources ---- */
+.single .container .main .headline .dates {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #999;
+}
+
+.single .container .main .detail .sources {
+  clear: both;
+  margin-top: 2em;
+  padding: 14px 18px;
+  background: #fbf6ee;
+  border-left: 4px solid #f7931e;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.single .container .main .detail .sources .sources-title {
+  margin: 0;
+  font-weight: 700;
+  color: #e07b00;
+}
+
+.single .container .main .detail .sources ul {
+  margin: 0.4em 0 0 1.2em;
+  padding: 0;
+  list-style: disc;
+}
+
+.single .container .main .detail .sources a {
+  word-break: break-all;
+}

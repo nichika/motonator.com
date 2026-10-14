@@ -253,3 +253,61 @@ footer {
 .detail img {
   border-radius: 6px;
 }
+
+/* ---- readability overrides ---- */
+body {
+  font-size: 16px;
+}
+
+.single .container .main .content {
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.02em;
+}
+
+.single .container .main .detail p,
+.single .container .main .mean p {
+  margin-top: 1.2em;
+}
+
+.single .container .main .content strong {
+  font-weight: 700;
+  background: linear-gradient(transparent 60%, #ffe3a3 60%);
+  padding: 0 2px;
+}
+
+.single .container .main .content em {
+  font-style: normal;
+  font-weight: 700;
+  color: #e07b00;
+}
+
+.single .container .main .headline .ruby {
+  font-size: 15px;
+}
+
+.single .container .main .headline .tag_list > li a,
+.post_list .tag_list > li a {
+  font-size: 13px;
+  padding: 5px 7px;
+}
+
+.post_list > li .title {
+  font-size: 14px;
+}
+
+.sub .post_list .title {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+footer {
+  font-size: 13px;
+}
+
+@media (max-width: 639px) {
+  .single .container .main .content {
+    font-size: 17px;
+    line-height: 1.95;
+  }
+}

@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "public_html/ads.txt"
+      - "public_html/favicon.ico"
       - "public_html/wp-content/themes/motonator/**"
   workflow_dispatch: {}
 

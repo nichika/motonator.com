@@ -8,6 +8,7 @@
 // it back doesn't re-trigger this workflow.
 
 import { readFile, writeFile, readdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 
 const API_BASE = process.env.WP_API_BASE; // e.g. https://motonator.com/wp-json
@@ -22,13 +23,21 @@ if (!API_BASE || !USERNAME || !APP_PASSWORD) {
 const authHeader = "Basic " + Buffer.from(`${USERNAME}:${APP_PASSWORD}`).toString("base64");
 const ARTICLES_DIR = path.join(process.cwd(), "content", "articles");
 const STATE_FILE = path.join(process.cwd(), "content", ".published-articles.json");
+// sha1 of each article's WordPress-facing fields at the time it was last synced.
+// When a JSON file changes after publishing, the existing post is updated in place.
+const HASH_FILE = path.join(process.cwd(), "content", ".content-hashes.json");
 
-async function loadState() {
+async function loadJson(file) {
   try {
-    return JSON.parse(await readFile(STATE_FILE, "utf8"));
+    return JSON.parse(await readFile(file, "utf8"));
   } catch {
     return {};
   }
+}
+
+function hashArticle(article) {
+  const fields = [article.title, article.ruby || "", article.genre || [], article.work || [], article.etc || [], article.mean || "", article.content];
+  return createHash("sha1").update(JSON.stringify(fields)).digest("hex");
 }
 
 async function wpFetch(endpoint, options = {}) {
@@ -69,31 +78,40 @@ async function resolveTermIds(taxonomyKey, names) {
   return ids;
 }
 
-async function publishArticle(file, article) {
+async function buildPayload(article) {
   const [genreIds, workIds, etcIds] = await Promise.all([
     resolveTermIds("genre", article.genre || []),
     resolveTermIds("work", article.work || []),
     resolveTermIds("etc", article.etc || []),
   ]);
+  return {
+    title: article.title,
+    content: article.content,
+    genre: genreIds,
+    work: workIds,
+    etc: etcIds,
+    acf: {
+      ruby: article.ruby || "",
+      mean: article.mean || "",
+    },
+  };
+}
 
+async function publishArticle(file, article) {
   const post = await wpFetch("/wp/v2/posts", {
     method: "POST",
-    body: JSON.stringify({
-      title: article.title,
-      content: article.content,
-      status: "draft",
-      genre: genreIds,
-      work: workIds,
-      etc: etcIds,
-      acf: {
-        ruby: article.ruby || "",
-        mean: article.mean || "",
-      },
-    }),
+    body: JSON.stringify({ ...(await buildPayload(article)), status: "draft" }),
   });
-
   console.log(`Published draft for "${article.title}" -> post ID ${post.id} (${file})`);
   return post.id;
+}
+
+async function updateArticle(file, postId, article) {
+  await wpFetch(`/wp/v2/posts/${postId}`, {
+    method: "POST",
+    body: JSON.stringify(await buildPayload(article)),
+  });
+  console.log(`Updated post ${postId} from ${file} (status unchanged)`);
 }
 
 async function loadExistingTitles() {
@@ -109,35 +127,57 @@ async function loadExistingTitles() {
 }
 
 async function main() {
-  const state = await loadState();
+  const state = await loadJson(STATE_FILE);
+  const hashes = await loadJson(HASH_FILE);
   const files = (await readdir(ARTICLES_DIR)).filter((f) => f.endsWith(".json"));
   const existingTitles = await loadExistingTitles();
 
-  let changed = false;
+  let stateChanged = false;
+  let hashesChanged = false;
   for (const file of files) {
+    const article = JSON.parse(await readFile(path.join(ARTICLES_DIR, file), "utf8"));
+    const hash = hashArticle(article);
+
     if (state[file]) {
-      console.log(`Skipping ${file} (already published as post ${state[file]})`);
+      if (!hashes[file]) {
+        // First time we track this file: record it without touching WordPress,
+        // so edits made in wp-admin are not overwritten.
+        hashes[file] = hash;
+        hashesChanged = true;
+      } else if (hashes[file] !== hash) {
+        try {
+          await updateArticle(file, state[file], article);
+          hashes[file] = hash;
+          hashesChanged = true;
+        } catch (err) {
+          console.error(`Failed to update ${file}:`, err.message, err.cause || "");
+          process.exitCode = 1;
+        }
+      } else {
+        console.log(`Skipping ${file} (unchanged, post ${state[file]})`);
+      }
       continue;
     }
-    const article = JSON.parse(await readFile(path.join(ARTICLES_DIR, file), "utf8"));
+
     if (existingTitles.has(article.title)) {
       console.log(`Skipping ${file}: a post titled "${article.title}" already exists (id ${existingTitles.get(article.title)})`);
       state[file] = existingTitles.get(article.title);
-      changed = true;
+      hashes[file] = hash;
+      stateChanged = hashesChanged = true;
       continue;
     }
     try {
       state[file] = await publishArticle(file, article);
-      changed = true;
+      hashes[file] = hash;
+      stateChanged = hashesChanged = true;
     } catch (err) {
       console.error(`Failed to publish ${file}:`, err.message, err.cause || "");
       process.exitCode = 1;
     }
   }
 
-  if (changed) {
-    await writeFile(STATE_FILE, JSON.stringify(state, null, 2) + "\n");
-  }
+  if (stateChanged) await writeFile(STATE_FILE, JSON.stringify(state, null, 2) + "\n");
+  if (hashesChanged) await writeFile(HASH_FILE, JSON.stringify(hashes, null, 2) + "\n");
 }
 
 main();

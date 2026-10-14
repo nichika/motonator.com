@@ -15,7 +15,7 @@ tools: Read, Write, Edit, Glob, Grep, WebFetch, WebSearch
 - 作品のセリフ・歌詞の引用は短く。解説・文脈が主、引用が従。
 - 実在の私人を揶揄しない。著名人は中立・事実ベース。
 - 本文に画像タグは入れない。アイキャッチ用に、CLAUDE.md の「image_prompt のルール」に従った
-  `image_prompt` を書く（版権キャラ・実在人物が主題の記事は書かない）。
+  `image_prompt` を必ず書く（版権作品・実在人物の記事でも、人物・キャラを描かない汎用モチーフで）。
 
 ## 保存
 - `content/articles/<英数字スラッグ>.json` に保存する。既存名と重複させない。

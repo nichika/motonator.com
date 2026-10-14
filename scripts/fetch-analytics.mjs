@@ -163,6 +163,7 @@ async function main() {
   await mkdir(dir, { recursive: true });
   await writeFile(path.join(dir, "latest.json"), JSON.stringify(report, null, 2) + "\n");
   await writeFile(path.join(dir, "latest.md"), render(report) + "\n");
+  await writeFile(path.join(dir, `${new Date().toISOString().slice(0, 10)}.md`), render(report) + "\n");
   console.log("Wrote content/reports/analytics/latest.{json,md}");
   if (failed) process.exitCode = 1;
 }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-	<link rel="stylesheet" href="<?=get_template_directory_uri()?>/style.css">
+	<link rel="stylesheet" href="<?=get_template_directory_uri()?>/style.css?v=<?=filemtime(get_template_directory() . '/style.css')?>">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="<?=get_template_directory_uri()?>/js/masonry.pkgd.min.js"></script>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

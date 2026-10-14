@@ -1,0 +1,33 @@
+name: Generate featured images
+
+on:
+  workflow_run:
+    workflows: ["Publish new articles to WordPress"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate and attach featured images
+        env:
+          WP_API_BASE: ${{ secrets.WP_API_BASE }}
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: node scripts/generate-images.mjs
+
+      - name: Commit image state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          [ -f content/.images-state.json ] && git add content/.images-state.json
+          git diff --cached --quiet || (git commit -m "Record generated image state [skip ci]" && git pull --rebase -q && git push)

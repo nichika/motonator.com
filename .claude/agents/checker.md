@@ -15,7 +15,8 @@ tools: Read, Glob, Grep, WebFetch, WebSearch
 4. **重複**: `content/articles/` と `content/rejected/` の他記事、およびサイトの既存記事
    （`https://motonator.com/wp-json/wp/v2/posts?per_page=100&_fields=title`、複数ページ）と、
    タイトル・内容が同一/酷似していないか。
-5. **リスク**: 実在の私人の揶揄、長いセリフ・歌詞の引用、断定的で根拠のない主張。
+5. **image_prompt**: 実在の人物・キャラクター・作品のシーン・ロゴ・文字を指示していないか。抽象的モチーフか。
+6. **リスク**: 実在の私人の揶揄、長いセリフ・歌詞の引用、断定的で根拠のない主張。
 
 ## 出力
 記事ごとに `OK` / `要修正` / `不可` と、指摘の一覧（箇所・内容・根拠・修正案）。

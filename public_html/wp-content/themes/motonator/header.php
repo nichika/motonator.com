@@ -44,8 +44,13 @@
 		$og_url = get_permalink($og_post->ID);
 	}
 	?>
+	<?php if(is_search() || is_404()): ?>
+		<meta name="robots" content="noindex,follow">
+	<?php endif; ?>
 	<meta name="description" content="<?=esc_attr($og_desc)?>">
-	<link rel="canonical" href="<?=esc_url($og_url)?>">
+	<?php if(!is_search() && !is_404()): ?>
+		<link rel="canonical" href="<?=esc_url($og_url)?>">
+	<?php endif; ?>
 	<link rel="icon" href="<?=home_url('/favicon.ico')?>" sizes="48x48">
 	<link rel="icon" type="image/png" sizes="192x192" href="<?=get_template_directory_uri()?>/img/icon-192.png">
 	<link rel="apple-touch-icon" href="<?=get_template_directory_uri()?>/img/apple-touch-icon.png">

@@ -5,6 +5,7 @@
 
 import { readFile, writeFile, readdir } from "node:fs/promises";
 import path from "node:path";
+import { optimizeImage } from "./optimize-image.mjs";
 
 const { WP_API_BASE, WP_USERNAME, WP_APP_PASSWORD, CF_ACCOUNT_ID, CF_API_TOKEN } = process.env;
 
@@ -94,7 +95,9 @@ async function main() {
         console.log(`Skipping ${file}: post ${postId} already has a featured image.`);
         continue;
       }
-      const buffer = await generateImage(article.image_prompt);
+      const original = await generateImage(article.image_prompt);
+      const buffer = await optimizeImage(original);
+      console.log(`Image size for ${file}: ${Math.round(original.length / 1024)}KB -> ${Math.round(buffer.length / 1024)}KB`);
       const slug = file.replace(/\.json$/, "");
       const mediaId = await uploadMedia(buffer, `${slug}.jpg`, `${article.title}のイメージ`);
       await wpJson(`/wp/v2/posts/${postId}`, { method: "POST", body: JSON.stringify({ featured_media: mediaId }) });

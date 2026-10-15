@@ -1,0 +1,20 @@
+name: Test image optimizer (temporary)
+on:
+  workflow_dispatch: {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install --no-save --no-audit --no-fund sharp
+      - name: Optimize a real generated image and report sizes
+        run: |
+          curl -s -o /tmp/in.jpg "https://motonator.com/wp-content/uploads/2026/10/barusu.jpg"
+          cat > /tmp/t.mjs <<'JS'
+          import { readFile } from "node:fs/promises";
+          import { optimizeImage } from "/home/runner/work/motonator.com/motonator.com/scripts/optimize-image.mjs";
+          const input = await readFile("/tmp/in.jpg");
+          const out = await optimizeImage(input);
+          console.log(`original ${Math.round(input.length/1024)}KB -> optimized ${Math.round(out.length/1024)}KB`);
+          JS
+          cd /home/runner/work/motonator.com/motonator.com && node /tmp/t.mjs

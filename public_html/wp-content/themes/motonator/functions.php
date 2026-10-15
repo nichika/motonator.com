@@ -70,8 +70,8 @@ add_filter('rest_endpoints', function ($endpoints) {
 });
 
 add_action('template_redirect', function () {
-    if (is_author() || isset($_GET['author'])) {
+    if (is_author() || isset($_GET["author"])) {
         wp_redirect(home_url('/'), 301);
         exit;
     }
-});
+}, 0);

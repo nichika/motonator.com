@@ -344,3 +344,228 @@ footer {
 .single .container .main .detail .sources a {
   word-break: break-all;
 }
+
+/* ---- sidebar and list UI ---- */
+.sub .search form {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.sub .search form input {
+  float: none;
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  height: 44px;
+  padding: 0 12px;
+  font-size: 16px;
+  border: 2px solid #ffd9a8;
+  border-radius: 8px;
+}
+
+.sub .search form input:focus {
+  outline: none;
+  border-color: #f7931e;
+}
+
+.sub .search form button {
+  float: none;
+  flex: none;
+  position: static;
+  width: 64px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sub .post {
+  padding: 18px 14px;
+  border-radius: 10px;
+}
+
+.sub .post h2 {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.sub .post .post_list {
+  margin-top: 14px;
+}
+
+.sub .post .post_list > li {
+  margin-top: 8px;
+}
+
+.sub .post .post_list > li:first-child {
+  margin-top: 0;
+}
+
+.sub .post .post_list > li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: auto;
+  padding: 8px;
+  min-height: 64px;
+  border-radius: 8px;
+  background: #fff;
+  color: #4a3b32;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.sub .post .post_list > li a:hover {
+  background: #fff6e8;
+  opacity: 1;
+}
+
+.sub .post .post_list > li a .thumbnail {
+  display: block;
+  position: relative;
+  flex: none;
+  width: 56px;
+  max-height: none;
+  padding: 0;
+}
+
+.sub .post .post_list > li a .thumbnail img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  max-width: none;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #fff0db;
+}
+
+.sub .post .post_list > li a .info {
+  min-width: 0;
+}
+
+.sub .post .post_list > li a .title {
+  display: -webkit-box;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sub .post .post_list > li a .genre {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 1px 9px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #e07b00;
+  background: #fff0db;
+  border-radius: 10px;
+}
+
+.sub .popular_post .post_list {
+  counter-reset: rank;
+}
+
+.sub .popular_post .post_list > li {
+  counter-increment: rank;
+}
+
+.sub .popular_post .post_list > li a .thumbnail:before {
+  content: counter(rank);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: 1;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: #f7931e;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.sub .popular_post .post_list > li:nth-child(-n+3) a .thumbnail:before {
+  background: #e0561e;
+}
+
+/* ---- search results list ---- */
+.search .container .main .post .post_list > li {
+  transition: background 0.15s;
+}
+
+.search .container .main .post .post_list > li:hover {
+  background: #ffe9cc;
+}
+
+.search .container .main .post .post_list > li .title a:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.search .container .main .post .post_list > li .tag {
+  position: relative;
+  z-index: 2;
+}
+
+.search .container .main .post .post_list > li .thumbnail img {
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.search .container .main .post .wp-pagenavi a,
+.search .container .main .post .wp-pagenavi span {
+  min-width: 40px;
+  padding: 10px 12px;
+}
+
+@media (max-width: 639px) {
+  .sub {
+    margin-top: 28px;
+  }
+
+  .sub .post {
+    padding: 16px 12px;
+  }
+
+  .sub .post .post_list > li a {
+    gap: 12px;
+    padding: 10px;
+    min-height: 72px;
+  }
+
+  .sub .post .post_list > li a .thumbnail,
+  .sub .post .post_list > li a .thumbnail img {
+    width: 64px;
+  }
+
+  .sub .post .post_list > li a .thumbnail img {
+    height: 64px;
+  }
+
+  .sub .post .post_list > li a .title {
+    font-size: 16px;
+  }
+
+  .sub .search form input {
+    height: 48px;
+  }
+
+  .sub .search form button {
+    height: 48px;
+    width: 72px;
+  }
+}

@@ -89,6 +89,14 @@
 			'logo' => ['@type' => 'ImageObject', 'url' => get_template_directory_uri() . '/img/icon-512.png'],
 			'description' => 'ネットスラングや流行語、ゲーム・アニメ・マンガの名言の元ネタを、出典つきで解説するWEBサイト。',
 		],
+		[
+			'@type' => 'Person',
+			'@id' => home_url('/#author'),
+			'name' => 'もとね',
+			'jobTitle' => 'ディレクター',
+			'description' => 'Motonatorの運営者。ゲーム・アニメ・マンガが好きで、普段はIT企業でディレクターとして働いています。',
+			'url' => home_url('/about'),
+		],
 	];
 	if(is_singular('post')){
 		$ld_id = $og_post->ID;
@@ -118,7 +126,7 @@
 			'dateModified' => get_the_modified_date('c', $ld_id),
 			'inLanguage' => 'ja',
 			'keywords' => implode(',', $ld_terms),
-			'author' => ['@type' => 'Organization', 'name' => $site_name, 'url' => home_url('/')],
+			'author' => ['@id' => home_url('/#author')],
 			'publisher' => [
 				'@type' => 'Organization',
 				'name' => $site_name,

@@ -13,6 +13,8 @@
 	</script>
 	<?php if(is_singular('post')): ?>
 		<title>「<?=esc_html(get_queried_object()->post_title)?>」の元ネタ・意味とは？｜Motonator</title>
+	<?php elseif(is_tax(['genre', 'work', 'etc'])): ?>
+		<title>「<?=esc_html(single_term_title('', false))?>」の元ネタ・記事一覧｜Motonator</title>
 	<?php else: ?>
 		<title><?=wp_title()?></title>
 	<?php endif; ?>
@@ -37,6 +39,12 @@
 		$og_url = get_permalink($og_post->ID);
 		$og_type = 'article';
 		if(has_post_thumbnail($og_post->ID)){ $og_image = get_the_post_thumbnail_url($og_post->ID, 'large'); }
+	} elseif(is_tax(['genre', 'work', 'etc'])){
+		$og_term = get_queried_object();
+		$og_title = $og_term->name . 'の元ネタ・記事一覧 | ' . $site_name;
+		$og_desc = '「' . $og_term->name . '」に関する元ネタ・意味の解説記事の一覧です。出典を確かめながら、やさしく解説しています。';
+		$og_desc = mb_strimwidth($og_desc, 0, 120, '…');
+		$og_url = get_term_link($og_term);
 	} elseif(is_page()){
 		$og_post = get_queried_object();
 		$og_title = $og_post->post_title . ' | ' . $site_name;
@@ -112,7 +120,7 @@
 			['@type' => 'ListItem', 'position' => 1, 'name' => 'ホーム', 'item' => home_url('/')],
 		];
 		if($ld_genres && !is_wp_error($ld_genres)){
-			$ld_crumbs[] = ['@type' => 'ListItem', 'position' => 2, 'name' => $ld_genres[0]->name, 'item' => home_url('/?s=' . $ld_genres[0]->slug)];
+			$ld_crumbs[] = ['@type' => 'ListItem', 'position' => 2, 'name' => $ld_genres[0]->name, 'item' => get_term_link($ld_genres[0])];
 		}
 		$ld_crumbs[] = ['@type' => 'ListItem', 'position' => count($ld_crumbs) + 1, 'name' => $og_post->post_title . 'の元ネタ'];
 		$ld_graph[] = [

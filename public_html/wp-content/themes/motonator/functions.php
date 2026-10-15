@@ -75,3 +75,16 @@ add_action('template_redirect', function () {
         exit;
     }
 }, 0);
+
+// Tag archives (genre / work / etc) share the search results layout and styles.
+add_action('pre_get_posts', function ($query) {
+	if (!is_admin() && $query->is_main_query() && $query->is_tax(['genre', 'work', 'etc'])) {
+		$query->set('posts_per_page', 10);
+	}
+});
+add_filter('body_class', function ($classes) {
+	if (is_tax(['genre', 'work', 'etc'])) {
+		$classes[] = 'search';
+	}
+	return $classes;
+});

@@ -2,7 +2,9 @@
 	<div class="container">
 		<div class="main">
 			<?php
-			if(!empty($_GET['s'])){
+			if(is_tax()){
+				$search_title = 'タグ：' . single_term_title('', false);
+			} elseif(!empty($_GET['s'])){
 				$search_title = 'フリーワード: ' . $_GET['s'];
 			} elseif(!empty($_GET['genre'])) {
 				$search_title = 'タグ：' . $_GET['genre'];
@@ -15,9 +17,9 @@
 			}
 			?>
 			<div class="headline">
-				<h1>検索結果</h1>
+				<h1><?=is_tax() ? 'タグ別の記事一覧' : '検索結果'?></h1>
 				<div class="ruby">
-					<?=$search_title?>
+					<?=esc_html($search_title)?>
 				</div>
 			</div>
 			<?php if(have_posts()): ?>
@@ -49,7 +51,7 @@
 										<?php if($genre_tag_list): ?>
 											<?php foreach($genre_tag_list as $genre_tag): ?>
 												<li>
-													<a href="<?=get_home_url()?>?s=<?=$genre_tag->slug?>">
+													<a href="<?=esc_url(get_term_link($genre_tag))?>">
 														<?=$genre_tag->name?>
 													</a>
 												</li>
@@ -58,7 +60,7 @@
 										<?php if($work_tag_list): ?>
 											<?php foreach($work_tag_list as $work_tag): ?>
 												<li>
-													<a href="<?=get_home_url()?>?s=<?=$work_tag->slug?>">
+													<a href="<?=esc_url(get_term_link($work_tag))?>">
 														<?=$work_tag->name?>
 													</a>
 												</li>
@@ -67,7 +69,7 @@
 										<?php if($etc_tag_list): ?>
 											<?php foreach($etc_tag_list as $etc_tag): ?>
 												<li>
-													<a href="<?=get_home_url()?>?s=<?=$etc_tag->slug?>">
+													<a href="<?=esc_url(get_term_link($etc_tag))?>">
 														<?=$etc_tag->name?>
 													</a>
 												</li>

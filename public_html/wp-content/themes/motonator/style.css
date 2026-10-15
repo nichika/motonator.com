@@ -2465,14 +2465,19 @@ footer {
 
 /* ---- standard pages (privacy policy, contact): readable column and typography ---- */
 body.page:not(.page-id-44) .container {
-  width: auto;
-  max-width: 760px;
+  width: 960px;
   margin: 0 auto;
-  padding: 40px 20px 56px;
+  padding: 40px 0;
   text-align: left;
+  overflow: hidden;
 }
 
-body.page:not(.page-id-44) .container > h1 {
+body.page:not(.page-id-44) .container .main {
+  float: left;
+  width: 680px;
+}
+
+body.page:not(.page-id-44) .container .main > h1 {
   display: table;
   margin: 0 auto 28px;
   padding-bottom: 10px;
@@ -2484,7 +2489,7 @@ body.page:not(.page-id-44) .container > h1 {
   border-bottom: 4px solid #f7931e;
 }
 
-body.page:not(.page-id-44) .container > .content {
+body.page:not(.page-id-44) .container .main > .content {
   font-size: 16px;
   line-height: 1.95;
   color: #544;
@@ -2610,10 +2615,16 @@ body.page:not(.page-id-44) .wpcf7-response-output {
 
 @media (max-width: 639px) {
   body.page:not(.page-id-44) .container {
-    padding: 28px 16px 44px;
+    width: auto;
+    padding: 20px 10px 30px;
   }
 
-  body.page:not(.page-id-44) .container > h1 {
+  body.page:not(.page-id-44) .container .main {
+    float: none;
+    width: auto;
+  }
+
+  body.page:not(.page-id-44) .container .main > h1 {
     font-size: 23px;
     letter-spacing: 0.1em;
   }

@@ -85,7 +85,7 @@
 							<?php if($genre_tag_list): ?>
 								<?php foreach($genre_tag_list as $genre_tag): ?>
 									<li>
-										<a href="<?=get_home_url()?>?s=<?=$genre_tag->slug?>">
+										<a href="<?=esc_url(get_term_link($genre_tag))?>">
 											<?=$genre_tag->name?>
 										</a>
 									</li>
@@ -94,7 +94,7 @@
 							<?php if($work_tag_list): ?>
 								<?php foreach($work_tag_list as $work_tag): ?>
 									<li>
-										<a href="<?=get_home_url()?>?s=<?=$work_tag->slug?>">
+										<a href="<?=esc_url(get_term_link($work_tag))?>">
 											<?=$work_tag->name?>
 										</a>
 									</li>
@@ -103,7 +103,7 @@
 							<?php if($etc_tag_list): ?>
 								<?php foreach($etc_tag_list as $etc_tag): ?>
 									<li>
-										<a href="<?=get_home_url()?>?s=<?=$etc_tag->slug?>">
+										<a href="<?=esc_url(get_term_link($etc_tag))?>">
 											<?=$etc_tag->name?>
 										</a>
 									</li>

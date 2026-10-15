@@ -87,7 +87,18 @@
 			'query-input' => 'required name=search_term_string',
 		],
 	];
-	$ld_graph = [$ld_site];
+	$ld_graph = [
+		$ld_site,
+		[
+			'@type' => 'Organization',
+			'@id' => home_url('/#organization'),
+			'name' => $site_name,
+			'url' => home_url('/'),
+			'foundingDate' => '2017',
+			'logo' => ['@type' => 'ImageObject', 'url' => get_template_directory_uri() . '/img/icon-512.png'],
+			'description' => 'ネットスラングや流行語、ゲーム・アニメ・マンガの名言の元ネタを、出典つきで解説するWEBサイト。',
+		],
+	];
 	if(is_singular('post')){
 		$ld_id = $og_post->ID;
 		$ld_terms = [];

@@ -54,8 +54,20 @@ function sourcesHtml(article) {
   return `<div class="sources"><p class="sources-title">参考・出典</p><ul>${items}</ul></div>`;
 }
 
+async function fetchWithRetry(url, options, attempts = 3) {
+  for (let i = 1; ; i++) {
+    try {
+      const res = await fetch(url, { ...options, signal: AbortSignal.timeout(30000) });
+      if (res.status < 500 || i === attempts) return res;
+    } catch (err) {
+      if (i === attempts) throw err;
+    }
+    await new Promise((r) => setTimeout(r, 2000 * i));
+  }
+}
+
 async function wpFetch(endpoint, options = {}) {
-  const res = await fetch(`${API_BASE}${endpoint}`, {
+  const res = await fetchWithRetry(`${API_BASE}${endpoint}`, {
     ...options,
     headers: {
       Authorization: authHeader,

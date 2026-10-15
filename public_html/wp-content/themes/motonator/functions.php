@@ -59,3 +59,19 @@ function shortcode_template_url() {
     return get_template_directory_uri();
 }
 add_shortcode('temp_url', 'shortcode_template_url');
+
+// Hardening: don't expose WordPress usernames to anonymous visitors.
+add_filter('rest_endpoints', function ($endpoints) {
+    if (!is_user_logged_in()) {
+        unset($endpoints['/wp/v2/users']);
+        unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
+    }
+    return $endpoints;
+});
+
+add_action('template_redirect', function () {
+    if (is_author() || isset($_GET['author'])) {
+        wp_redirect(home_url('/'), 301);
+        exit;
+    }
+});

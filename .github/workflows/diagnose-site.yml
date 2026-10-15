@@ -1,0 +1,21 @@
+name: Diagnose site access (temporary)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe motonator.com from a GitHub-hosted runner
+        run: |
+          echo "runner public IP: $(curl -s --max-time 10 https://api.ipify.org)"
+          for path in "/" "/robots.txt" "/ads.txt" "/wp-json/wp/v2/posts?per_page=1" "/wp-login.php"; do
+            code=$(curl -s -o /tmp/body.txt -w "%{http_code}" --max-time 20 -A "Mozilla/5.0" "https://motonator.com$path")
+            echo "$code  $path  :: $(head -c 80 /tmp/body.txt | tr '\n' ' ')"
+          done
+          echo "--- default curl UA vs browser UA on the REST API"
+          curl -s -o /dev/null -w "curl UA: %{http_code}\n" --max-time 20 "https://motonator.com/wp-json/wp/v2/posts?per_page=1"
+          curl -s -o /dev/null -w "node-like UA: %{http_code}\n" --max-time 20 -A "node" "https://motonator.com/wp-json/wp/v2/posts?per_page=1"
+          echo "--- response headers (REST)"
+          curl -sI --max-time 20 "https://motonator.com/wp-json/wp/v2/posts?per_page=1" | head -12

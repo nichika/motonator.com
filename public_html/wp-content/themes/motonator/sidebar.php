@@ -25,7 +25,7 @@
 						<?php if(has_post_thumbnail()): ?>
 							<?php the_post_thumbnail(array( 30, 30 )); ?>
 						<?php else: ?>
-							<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
+							<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
 						<?php endif; ?>
 						</div>
 						<div class="title">
@@ -61,7 +61,7 @@
 							<?php if(has_post_thumbnail()): ?>
 								<?php the_post_thumbnail(array( 30, 30 )); ?>
 							<?php else: ?>
-								<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
+								<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
 							<?php endif; ?>
 						</div>
 						<div class="title">

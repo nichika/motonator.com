@@ -143,7 +143,7 @@ $about_genre_count = is_wp_error($about_genres) ? 0 : count($about_genres);
 									<?php if(has_post_thumbnail()): ?>
 										<?php the_post_thumbnail('thumbnail'); ?>
 									<?php else: ?>
-										<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
+										<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
 									<?php endif; ?>
 								</a>
 							</div>

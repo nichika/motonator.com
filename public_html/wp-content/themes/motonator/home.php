@@ -60,13 +60,13 @@
 					<?php if(has_post_thumbnail()): ?>
 						<div class="thumbnail">
 							<a href="<?=$post->ID?>">
-								<?php the_post_thumbnail(); ?>
+								<?php the_post_thumbnail('medium'); ?>
 							</a>
 						</div>
 					<?php else: ?>
 						<div class="thumbnail no_image">
 							<a href="<?=$post->ID?>">
-								<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
+								<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
 							</a>
 						</div>
 					<?php endif; ?>
@@ -121,23 +121,4 @@
 			<?php wp_reset_postdata(); ?>
 		</ul>
 	</div>
-	<script>
-		jQuery(function($){
-			function doMasonry(){
-				$('.post_list').masonry({
-					itemSelector: '.post_list > li',
-					columnWidth: 320,
-					isFitWidth: true
-				});
-			}
-			if($(window).width()>=640){
-				doMasonry();
-			}
-			$(window).resize(function(){
-				if($(window).width()>=640){
-					doMasonry();
-				}
-			});
-		});
-	</script>
 <?php get_footer(); ?>

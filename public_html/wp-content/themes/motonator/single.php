@@ -63,7 +63,7 @@
 					<h2><b><?=$post->post_title?></b>の元ネタ</h2>
 					<div class="content">
 						<?php if(has_post_thumbnail()): ?>
-							<?php the_post_thumbnail(); ?>
+							<?php the_post_thumbnail('medium_large'); ?>
 						<?php endif; ?>
 						<?php the_content(); ?>
 					</div>
@@ -138,7 +138,7 @@
 											<?php if(has_post_thumbnail($kw_id)): ?>
 												<img src="<?=esc_url(get_the_post_thumbnail_url($kw_id, 'thumbnail'))?>" alt="<?=esc_attr(get_the_title($kw_id))?>">
 											<?php else: ?>
-												<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
+												<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
 											<?php endif; ?>
 										</a>
 									</div>
@@ -198,9 +198,9 @@
 										<div class="thumbnail">
 											<a href="<?=$post->ID?>">
 										<?php if(has_post_thumbnail()): ?>
-											<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+											<img src="<?=esc_url(get_the_post_thumbnail_url(null, 'thumbnail'))?>" alt="<?php the_title(); ?>" width="150" height="150" loading="lazy">
 										<?php else: ?>
-											<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
+											<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
 										<?php endif; ?>
 											</a>
 										</div>

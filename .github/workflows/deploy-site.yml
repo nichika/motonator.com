@@ -7,6 +7,8 @@ on:
       - "public_html/ads.txt"
       - "public_html/favicon.ico"
       - "public_html/robots.txt"
+      - "public_html/llms.txt"
+      - "public_html/.htaccess"
       - "public_html/wp-content/themes/motonator/**"
   workflow_dispatch: {}
 

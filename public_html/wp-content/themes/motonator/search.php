@@ -30,7 +30,7 @@
 										<?php if(has_post_thumbnail()): ?>
 											<?php the_post_thumbnail(array( 60, 60 )); ?>
 										<?php else: ?>
-											<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="">
+											<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
 										<?php endif; ?>
 									</a>
 								</div>

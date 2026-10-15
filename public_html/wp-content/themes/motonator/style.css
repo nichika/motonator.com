@@ -2400,3 +2400,13 @@ footer {
     width: 72px;
   }
 }
+
+@media (max-width: 639px) {
+  .sub .post .post_list > li a {
+    background: #fff6e8;
+  }
+
+  .sub .post .post_list > li a:active {
+    background: #ffe9cc;
+  }
+}

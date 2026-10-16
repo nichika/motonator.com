@@ -914,3 +914,10 @@ body.error404 .notfound-search button {
   background: #f7931e;
   border: none;
 }
+
+@media (max-width: 639px) {
+  .home .home_header .logo img {
+    width: auto;
+    max-width: 100%;
+  }
+}

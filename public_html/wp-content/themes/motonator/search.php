@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 	<div class="container">
 		<div class="main">
+			<?php if(is_tax()){ motonator_breadcrumb([['ホーム', home_url('/')], [single_term_title('', false), null]]); } ?>
 			<?php
 			if(is_tax()){
 				$search_title = 'タグ：' . single_term_title('', false);
@@ -21,6 +22,9 @@
 				<div class="ruby">
 					<?=esc_html($search_title)?>
 				</div>
+				<?php if(is_tax()): ?>
+					<p class="term-lead">「<?=esc_html(single_term_title('', false))?>」に関する元ネタ・意味の解説記事が<?=(int) $wp_query->found_posts?>件あります。<?=esc_html(wp_strip_all_tags(term_description()))?></p>
+				<?php endif; ?>
 			</div>
 			<?php if(have_posts()): ?>
 				<div class="post">

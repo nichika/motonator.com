@@ -2,6 +2,13 @@
 	<?php if(have_posts()): while(have_posts()): the_post(); ?>
 		<div class="container">
 			<div class="main">
+				<?php
+				$bc_genres = get_the_terms($post->ID, 'genre');
+				$bc_items = [['ホーム', home_url('/')]];
+				if($bc_genres && !is_wp_error($bc_genres)){ $bc_items[] = [$bc_genres[0]->name, get_term_link($bc_genres[0])]; }
+				$bc_items[] = [$post->post_title . 'の元ネタ', null];
+				motonator_breadcrumb($bc_items);
+				?>
 				<div class="headline">
 					<h1><b><?=$post->post_title?></b>の元ネタって？</h1>
 					<?php if(get_field('ruby')): ?>

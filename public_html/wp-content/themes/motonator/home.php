@@ -59,19 +59,19 @@
 				<li>
 					<?php if(has_post_thumbnail()): ?>
 						<div class="thumbnail">
-							<a href="<?=$post->ID?>">
+							<a href="<?=esc_url(get_permalink())?>">
 								<?php the_post_thumbnail('medium'); ?>
 							</a>
 						</div>
 					<?php else: ?>
 						<div class="thumbnail no_image">
-							<a href="<?=$post->ID?>">
+							<a href="<?=esc_url(get_permalink())?>">
 								<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
 							</a>
 						</div>
 					<?php endif; ?>
 					<div class="title">
-						<a href="<?=$post->ID?>">
+						<a href="<?=esc_url(get_permalink())?>">
 							<b>「<?=get_the_title()?>」</b>の元ネタ
 						</a>
 					</div>

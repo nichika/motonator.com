@@ -88,3 +88,26 @@ add_filter('body_class', function ($classes) {
 	}
 	return $classes;
 });
+
+// 404 pages reuse the standard-page layout and styles.
+add_filter('body_class', function ($classes) {
+	if (is_404()) {
+		$classes[] = 'page';
+	}
+	return $classes;
+});
+
+// Visible breadcrumb. $items: list of [label, url|null]; the last item is the current page.
+function motonator_breadcrumb($items) {
+	echo '<nav class="breadcrumb" aria-label="パンくずリスト"><ol>';
+	foreach ($items as $i => $item) {
+		echo '<li>';
+		if (!empty($item[1]) && $i < count($items) - 1) {
+			echo '<a href="' . esc_url($item[1]) . '">' . esc_html($item[0]) . '</a>';
+		} else {
+			echo '<span>' . esc_html($item[0]) . '</span>';
+		}
+		echo '</li>';
+	}
+	echo '</ol></nav>';
+}

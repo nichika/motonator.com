@@ -44,7 +44,7 @@
 		$og_title = $og_term->name . 'の元ネタ・記事一覧 | ' . $site_name;
 		$og_desc = '「' . $og_term->name . '」に関する元ネタ・意味の解説記事の一覧です。出典を確かめながら、やさしく解説しています。';
 		$og_desc = mb_strimwidth($og_desc, 0, 120, '…');
-		$og_url = get_term_link($og_term);
+		$og_url = (get_query_var('paged') > 1) ? get_pagenum_link(get_query_var('paged')) : get_term_link($og_term);
 	} elseif(is_page()){
 		$og_post = get_queried_object();
 		$og_title = $og_post->post_title . ' | ' . $site_name;

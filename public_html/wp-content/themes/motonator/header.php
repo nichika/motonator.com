@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 	<link rel="stylesheet" href="<?=get_template_directory_uri()?>/style.css?v=<?=filemtime(get_template_directory() . '/style.css')?>">
+	<?php if(!is_user_logged_in()): // do not count the site operator's own visits ?>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WEVBH926YX"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -11,6 +12,7 @@
 	  gtag('js', new Date());
 	  gtag('config', 'G-WEVBH926YX');
 	</script>
+	<?php endif; ?>
 	<?php if(is_singular('post')): ?>
 		<title>「<?=esc_html(get_queried_object()->post_title)?>」の元ネタ・意味とは？｜Motonator</title>
 	<?php elseif(is_tax(['genre', 'work', 'etc'])): ?>

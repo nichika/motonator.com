@@ -13,26 +13,6 @@
 			<?php get_search_form(); ?>
 		</div>
 	</header>
-	<ul class="thumbnail_list">
-		<?php
-		$args = [
-			'posts_per_page' => 10,
-			'post_type' => 'post',
-			'meta_key'  => '_thumbnail_id'
-		];
-		$thumbnail_query = new WP_Query($args);
-		?>
-		<?php while($thumbnail_query->have_posts()): ?>
-			<?php
-			$thumbnail_query->the_post();
-			?>
-			<?php /*
-		    <li style="background-image: url(<?=get_the_post_thumbnail_url()?>)"></li>
-		    // 上記コメントを外す ※Google審査用
-		    */ ?>
-		<?php endwhile; ?>
-		<?php wp_reset_postdata(); ?>
-	</ul>
 	<div class="about">
 		<div class="inner">
 			<h2><?=get_bloginfo()?>とは？</h2>

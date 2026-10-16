@@ -2719,3 +2719,28 @@ body.error404 .notfound-search button {
   line-height: 1.7;
   color: #6b5f58;
 }
+
+/* ---- home: CSS grid instead of the masonry script ---- */
+@media (min-width: 640px) {
+  .home .latest_post .post_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: auto;
+    max-width: 960px;
+    box-sizing: border-box;
+    padding: 0 16px;
+  }
+
+  .home .latest_post .post_list > li {
+    width: auto;
+    margin-top: 0;
+    box-sizing: border-box;
+  }
+}
+
+body.error404 .notfound-search button {
+  color: #fff;
+  background: #f7931e;
+  border: none;
+}

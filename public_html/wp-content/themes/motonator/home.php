@@ -20,85 +20,46 @@
 			<a href="<?=home_url()?>/about">詳しく見る</a>
 		</div>
 	</div>
-	<div class="latest_post">
-		<h2>新着記事</h2>
-		<ul class="post_list">
+	<section class="home_feed">
+		<ul class="feed_grid">
 			<?php
-			$args = [
-				'posts_per_page' => 20,
-				'post_type' => 'post',
-			];
-			$post_query = new WP_Query($args);
-			$post_number = 0;
+			// 24 is divisible by 2, 3, 4 and 6, so the grid has no ragged last row at any width.
+			$feed_query = new WP_Query(['posts_per_page' => 24, 'post_type' => 'post']);
+			$feed_index = 0;
 			?>
-			<?php while($post_query->have_posts()): ?>
+			<?php while($feed_query->have_posts()): $feed_query->the_post(); $feed_index++; ?>
 				<?php
-				$post_query->the_post();
-				$post_number++;
+				$feed_link = esc_url(get_permalink());
+				$feed_tags = [];
+				foreach(['genre', 'work', 'etc'] as $feed_tax){
+					$feed_terms = get_the_terms(get_the_ID(), $feed_tax);
+					if($feed_terms && !is_wp_error($feed_terms)){
+						foreach($feed_terms as $feed_term){ $feed_tags[] = $feed_term; }
+					}
+				}
+				$feed_tags = array_slice($feed_tags, 0, 3);
 				?>
-				<li>
-					<?php if(has_post_thumbnail()): ?>
-						<div class="thumbnail">
-							<a href="<?=esc_url(get_permalink())?>">
-								<?php the_post_thumbnail('medium'); ?>
-							</a>
-						</div>
-					<?php else: ?>
-						<div class="thumbnail no_image">
-							<a href="<?=esc_url(get_permalink())?>">
-								<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
-							</a>
-						</div>
-					<?php endif; ?>
-					<div class="title">
-						<a href="<?=esc_url(get_permalink())?>">
-							<b>「<?=get_the_title()?>」</b>の元ネタ
-						</a>
-					</div>
-					<div class="tag">
-						<?php
-						$genre_tag_list = get_the_terms($post->ID, 'genre');
-						$work_tag_list = get_the_terms($post->ID, 'work');
-						$etc_tag_list = get_the_terms($post->ID, 'etc');
-						?>
-						<ul class="tag_list">
-							<?php if($genre_tag_list): ?>
-								<?php foreach($genre_tag_list as $genre_tag): ?>
-									<li>
-										<a href="<?=esc_url(get_term_link($genre_tag))?>">
-											<?=$genre_tag->name?>
-										</a>
-									</li>
+				<li class="card">
+					<a class="card_thumb" href="<?=$feed_link?>" tabindex="-1" aria-hidden="true">
+						<?php if(has_post_thumbnail()): ?>
+							<?php the_post_thumbnail('medium_large', ['alt' => '', 'loading' => $feed_index <= 4 ? 'eager' : 'lazy', 'sizes' => '(min-width: 1700px) 16vw, (min-width: 1280px) 24vw, (min-width: 900px) 32vw, (min-width: 640px) 48vw, 96px']); ?>
+						<?php else: ?>
+							<img src="<?=get_template_directory_uri()?>/img/no_image.svg" alt="" width="320" height="320" loading="lazy">
+						<?php endif; ?>
+					</a>
+					<div class="card_body">
+						<a class="card_title" href="<?=$feed_link?>"><b>「<?=esc_html(get_the_title())?>」</b>の元ネタ</a>
+						<?php if($feed_tags): ?>
+							<ul class="card_tags">
+								<?php foreach($feed_tags as $feed_tag): ?>
+									<li><a href="<?=esc_url(get_term_link($feed_tag))?>"><?=esc_html($feed_tag->name)?></a></li>
 								<?php endforeach; ?>
-							<?php endif;?>
-							<?php if($work_tag_list): ?>
-								<?php foreach($work_tag_list as $work_tag): ?>
-									<li>
-										<a href="<?=esc_url(get_term_link($work_tag))?>">
-											<?=$work_tag->name?>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							<?php endif;?>
-							<?php if($etc_tag_list): ?>
-								<?php foreach($etc_tag_list as $etc_tag): ?>
-									<li>
-										<a href="<?=esc_url(get_term_link($etc_tag))?>">
-											<?=$etc_tag->name?>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							<?php endif;?>
-						</ul>
+							</ul>
+						<?php endif; ?>
 					</div>
 				</li>
-				<?php if(in_array($post_number, $ad_number_list)): ?>
-					<li class="google_ad">
-						Google Ad
-					</li>
-				<?php endif;?>
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		</ul>
-	</div>
+	</section>
 <?php get_footer(); ?>

@@ -15,6 +15,8 @@
 		<title>「<?=esc_html(get_queried_object()->post_title)?>」の元ネタ・意味とは？｜Motonator</title>
 	<?php elseif(is_tax(['genre', 'work', 'etc'])): ?>
 		<title>「<?=esc_html(single_term_title('', false))?>」の元ネタ・記事一覧｜Motonator</title>
+	<?php elseif(is_search()): ?>
+		<title><?=get_search_query() !== '' ? '「' . esc_html(get_search_query()) . '」の検索結果｜Motonator' : '記事一覧｜Motonator'?></title>
 	<?php elseif(is_404()): ?>
 		<title>ページが見つかりません｜Motonator</title>
 	<?php else: ?>

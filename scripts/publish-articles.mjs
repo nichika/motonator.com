@@ -185,6 +185,15 @@ async function main() {
       continue;
     }
 
+    // An explicit post_id wins over title matching (titles can differ in WordPress's curly-quote/ellipsis conversion).
+    if (article.post_id && [...existingTitles.values()].includes(article.post_id)) {
+      console.log(`Linking ${file} to post ${article.post_id} (post_id)`);
+      state[file] = article.post_id;
+      hashes[file] = hash;
+      stateChanged = hashesChanged = true;
+      continue;
+    }
+
     if (existingTitles.has(article.title)) {
       console.log(`Skipping ${file}: a post titled "${article.title}" already exists (id ${existingTitles.get(article.title)})`);
       state[file] = existingTitles.get(article.title);

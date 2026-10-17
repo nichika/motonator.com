@@ -1,10 +1,12 @@
 {
+  "image_prompt": "A small video camera lens reflecting colorful sparks of light, with tiny floating squares like pixels on a clean pastel background, evoking creative video-making.",
   "title": "YouTuber",
   "post_id": 68,
   "ruby": "ユーチューバー",
   "genre": ["ネット用語"],
   "work": [],
   "etc": [],
-  "mean": "「YouTuber」とは、動画サイト「YouTube」で制作した動画をアップロードし、収入を得ている人物や集団の総称である。",
-  "content": "<p>YouTuberという単語は和製英語であり、英語では「YouTube Personality」「YouTube Star」「YouTube Celebrity」のように呼ばれていたが、近年では英語圏の方でもYouTuberという言葉が認知されるようになってきた。</p>\n<p>2007年5月頃、YouTubeが特に閲覧数の多いユーザーに「YouTubeパートナープログラム」のパートナーになるよう勧誘をするようになった。後ほど広告表示を条件にユーザーが利益を得られるようになった。2011年4月にはパートナープログラムが一般ユーザーにも開放されるようになり、広告収入を得られるようになった。YouTubeの収益で生活するものも現れるようになったが、2017年現在では再生回数が10000回以上であることが収入の条件になっている。主な収益の手段は広告収入のほか、企業とのタイアップによる収入などがある。</p>\n<p>登録者数が10万を超えると「銀の再生ボタン」、100万人を超えると「金の再生ボタン」が、YouTubeの運営者からチャンネルの管理者に贈呈される。</p>"
+  "mean": "<p>『<strong>YouTuber</strong>』とは、動画共有サービス『YouTube』に動画を投稿・制作するクリエイターのことです。</p><p>YouTubeには広告収益を得られる仕組みもあり、活動で収入を得ている人もいます。</p>",
+  "content": "<p>「YouTuber」という言葉は、<strong>2006年</strong>に英語で初めて使われたとされています。</p><p>当初のYouTubeには収益化の仕組みがなく、多くの動画は趣味で作られていたそうです。その後、<strong>2007年</strong>に「パートナープログラム」が始まりました。</p><p>条件を満たしたチャンネルが、動画に表示される広告から収益を得られる仕組みです。</p><p>現在の参加条件は、公式ヘルプ（2026年10月確認）によると、長尺動画の場合「登録者1,000人以上、かつ直近12か月の総再生時間4,000時間以上」などです。条件は変わることがあります。</p><p>また、登録者数の節目には「クリエイター アワード」が贈られます。公式ページでは、<strong>10万人でシルバー、100万人でゴールド、1,000万人でダイヤモンド</strong>と案内されています。</p><p>趣味の延長だった動画投稿が、今では多くの人にとって身近な表現の場になっているのは、おもしろいと思います。</p>",
+  "sources": [{"title": "Wikipedia『YouTuber』", "url": "https://ja.wikipedia.org/wiki/YouTuber"}, {"title": "YouTube ヘルプ『YouTube パートナー プログラム（YPP）の概要』", "url": "https://support.google.com/youtube/answer/72851?hl=ja"}, {"title": "YouTube クリエイター アワード", "url": "https://www.youtube.com/intl/ja/creators/awards/"}]
 }

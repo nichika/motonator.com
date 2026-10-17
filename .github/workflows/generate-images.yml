@@ -4,6 +4,10 @@ on:
   workflow_run:
     workflows: ["Publish new articles to WordPress"]
     types: [completed]
+  schedule:
+    # Cloudflare's free Workers AI allowance resets at 00:00 UTC (09:00 JST).
+    # Retry daily so images that hit the daily limit are generated afterwards.
+    - cron: "30 0 * * *"
   workflow_dispatch: {}
 
 permissions:

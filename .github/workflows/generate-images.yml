@@ -37,4 +37,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           [ -f content/.images-state.json ] && git add content/.images-state.json
-          git diff --cached --quiet || (git commit -m "Record generated image state [skip ci]" && git pull --rebase -q && git push)
+          [ -f content/.images-urls.json ] && git add content/.images-urls.json
+          git diff --cached --quiet || (git commit -m "Record generated image state [skip ci]" && for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done)

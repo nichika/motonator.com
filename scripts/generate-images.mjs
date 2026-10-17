@@ -22,6 +22,7 @@ const authHeader = "Basic " + Buffer.from(`${WP_USERNAME}:${WP_APP_PASSWORD}`).t
 const ARTICLES_DIR = path.join(process.cwd(), "content", "articles");
 const PUBLISHED_FILE = path.join(process.cwd(), "content", ".published-articles.json");
 const IMAGES_FILE = path.join(process.cwd(), "content", ".images-state.json");
+const URLS_FILE = path.join(process.cwd(), "content", ".images-urls.json");
 
 const STYLE =
   "Flat vector illustration, minimalist style, warm orange (#f7931e) and cream white color palette, " +
@@ -71,12 +72,13 @@ async function uploadMedia(buffer, filename, altText) {
     body: buffer,
   });
   await wpJson(`/wp/v2/media/${media.id}`, { method: "POST", body: JSON.stringify({ alt_text: altText }) });
-  return media.id;
+  return { id: media.id, url: media.source_url };
 }
 
 async function main() {
   const published = await loadJson(PUBLISHED_FILE);
   const images = await loadJson(IMAGES_FILE);
+  const urls = await loadJson(URLS_FILE);
   const files = (await readdir(ARTICLES_DIR)).filter((f) => f.endsWith(".json"));
 
   let changed = false;
@@ -99,7 +101,8 @@ async function main() {
       const buffer = await optimizeImage(original);
       console.log(`Image size for ${file}: ${Math.round(original.length / 1024)}KB -> ${Math.round(buffer.length / 1024)}KB`);
       const slug = file.replace(/\.json$/, "");
-      const mediaId = await uploadMedia(buffer, `${slug}.jpg`, `${article.title}のイメージ`);
+      const { id: mediaId, url: mediaUrl } = await uploadMedia(buffer, `${slug}.jpg`, `${article.title}のイメージ`);
+      urls[file] = mediaUrl;
       await wpJson(`/wp/v2/posts/${postId}`, { method: "POST", body: JSON.stringify({ featured_media: mediaId }) });
       images[file] = mediaId;
       changed = true;
@@ -110,7 +113,10 @@ async function main() {
     }
   }
 
-  if (changed) await writeFile(IMAGES_FILE, JSON.stringify(images, null, 2) + "\n");
+  if (changed) {
+    await writeFile(IMAGES_FILE, JSON.stringify(images, null, 2) + "\n");
+    await writeFile(URLS_FILE, JSON.stringify(urls, null, 2) + "\n");
+  }
 }
 
 main();

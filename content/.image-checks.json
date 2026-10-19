@@ -1,7 +1,6 @@
 {
   "40byo-de-shitaku-shina.json": { "date": "2026-10-19", "result": "OK", "note": "懐中時計と朝焼け。image_promptに忠実、文字・ロゴ・人物・キャラクターなし。" },
   "biju.json": { "date": "2026-10-19", "result": "OK", "note": "ベルベット上の宝石ときらめき。image_promptに忠実。" },
-  "daga-kotowaru.json": { "date": "2026-10-19", "result": "要差し替え", "note": "ドア脇の標識に「STOP」の文字が判読可能なため禁止事項に抵触。代替image_prompt案: A single closed wooden door standing alone in a quiet golden field at sunrise, with a plain red octagon-shaped sign (no letters or symbols) leaning beside it, evoking a firm and calm refusal." },
   "ehho-ehho.json": { "date": "2026-10-19", "result": "OK", "note": "砂地の足跡と羽根。image_promptに忠実。" },
   "omae-no-mono-wa-ore-no-mono.json": { "date": "2026-10-19", "result": "OK", "note": "空の段ボール箱と溢れた箱。image_promptに忠実。" },
   "sukisugite-horobu.json": { "date": "2026-10-19", "result": "OK", "note": "ハート形のきらめき。image_promptに忠実。" },
@@ -14,7 +13,6 @@
   "kokoro-wo-moyase.json": { "date": "2026-10-19", "result": "OK", "note": "両手に灯る炎。image_promptに忠実。" },
   "meroi.json": { "date": "2026-10-19", "result": "OK", "note": "ハート形のキャンドルワックス。image_promptに忠実。" },
   "oyaji-nimo-butareta-koto-naino-ni.json": { "date": "2026-10-19", "result": "OK", "note": "手のシルエットと丸窓の光。image_promptに忠実。" },
-  "senryoku-530000.json": { "date": "2026-10-19", "result": "要差し替え", "note": "読める数字（0969335 9 3等）が描かれており文字禁止事項に抵触。レンズ形状もスカウターを強く連想させる。代替image_prompt案: An abstract glowing gauge needle swinging sharply upward against a deep night sky, with warm sparks and light trails bursting outward from the tip." },
   "tada-no-ningen-niwa-kyoumi-arimasen.json": { "date": "2026-10-19", "result": "OK", "note": "教室の机と紙飛行機。image_promptに忠実。" },
   "utsukushiku-saigo-wo-kazaritsukeru-hima-ga-areba.json": { "date": "2026-10-19", "result": "OK", "note": "鞘に収まった剣と夕焼け。image_promptに忠実。" },
   "utteiinoha-utareru-kakugo.json": { "date": "2026-10-19", "result": "OK", "note": "光の筋。image_promptに忠実。" }

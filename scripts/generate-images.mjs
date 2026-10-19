@@ -24,6 +24,10 @@ const PUBLISHED_FILE = path.join(process.cwd(), "content", ".published-articles.
 const IMAGES_FILE = path.join(process.cwd(), "content", ".images-state.json");
 const URLS_FILE = path.join(process.cwd(), "content", ".images-urls.json");
 
+// Files listed in FORCE_FILES (comma-separated, set by the workflow_dispatch input) get a new image
+// even if they already have one, e.g. when a generated image failed the visual check.
+const force = new Set((process.env.FORCE_FILES || "").split(",").map((s) => s.trim()).filter(Boolean));
+
 const STYLE =
   "Flat vector illustration, minimalist style, warm orange (#f7931e) and cream white color palette, " +
   "clean simple background, square 1:1 composition, no text, no letters, no realistic human faces, " +
@@ -84,14 +88,14 @@ async function main() {
   let changed = false;
   for (const file of files) {
     const postId = published[file];
-    if (!postId || images[file]) continue;
+    if (!postId || (images[file] && !force.has(file))) continue;
 
     const article = JSON.parse(await readFile(path.join(ARTICLES_DIR, file), "utf8"));
     if (!article.image_prompt) continue;
 
     try {
       const post = await wpJson(`/wp/v2/posts/${postId}?context=edit&_fields=id,featured_media`);
-      if (post.featured_media) {
+      if (post.featured_media && !force.has(file)) {
         images[file] = post.featured_media;
         changed = true;
         console.log(`Skipping ${file}: post ${postId} already has a featured image.`);

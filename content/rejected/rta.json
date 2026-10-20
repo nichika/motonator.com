@@ -1,0 +1,15 @@
+{
+  "image_prompt": "A stopwatch with its hands spinning fast, placed next to a simple checkered finish-line flag, symbolizing a race against real time",
+  "title": "RTA",
+  "ruby": "リアルタイムアタック",
+  "genre": ["ゲーム"],
+  "work": [],
+  "etc": ["スピードラン", "RTA in Japan", "タイムアタック"],
+  "mean": "<p>『RTA』とは「リアルタイムアタック」の略で、ゲームをクリアするまでにかかった<strong>現実の時間</strong>の短さを競う遊び方のことです。</p><p>セーブやロードを駆使したり、ときにはバグ技も使ったりしながら、とにかく最速クリアを目指します。</p><p>海外では同じ遊び方が「スピードラン」と呼ばれており、RTAは日本でよく使われる呼び方です。</p>",
+  "content": "<p>『RTA』という呼び方が使われるのは、<strong>「タイムアタック」</strong>という言葉と区別するためです。</p><p>「タイムアタック」はゲーム内の制限時間を競う遊び方を指すことが多く、和製英語的な表現として使われてきました。</p><p>一方、ゲームクリアまでの<strong>現実の経過時間</strong>を競う遊び方は、海外では「スピードラン」と呼ばれています。</p><p>この2つを混同しないよう、日本では「リアルタイムアタック」＝RTAという呼び方が定着していったとされています。</p><p>RTAが大きく盛り上がるきっかけになったのが、<strong>2016年12月28日</strong>から東京・秋葉原近くの会場で開かれた「RTA in Japan」です。</p><p>アメリカのチャリティイベント「Games Done Quick」を参考に、有志が<em>日本初の大型オフラインRTAイベント</em>として立ち上げました。当日は多数のRTAが披露されました。</p><p>その後も毎年開催が続き、2018年冬からはチャリティ活動も始まり、国境なき医師団への寄付総額は1億円を超えています。</p><p>一人の趣味だったはずの遊び方が、ここまで大きなイベントに育つとは、驚きの広がり方だと思います。</p>",
+  "sources": [
+    {"title": "GAME Business『RTA in Japanの歩み』", "url": "https://www.gamebusiness.jp/article/2024/08/27/23427.html"},
+    {"title": "automaton『「RTA in Japan」が12月末に東京で開催へ』", "url": "https://automaton-media.com/articles/newsjp/20161214-36110/"},
+    {"title": "Oggi.jp『「RTA」とはどんな意味？ 言葉の由来・魅力や広まった背景も紹介』", "url": "https://oggi.jp/7697334"}
+  ]
+}

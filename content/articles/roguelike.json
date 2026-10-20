@@ -1,0 +1,11 @@
+{
+  "image_prompt": "A hand-drawn parchment maze that keeps redrawing itself into a new pattern, with a single rolling die resting beside it",
+  "title": "ローグライク",
+  "ruby": "",
+  "genre": ["ゲーム"],
+  "work": [],
+  "etc": ["Rogue", "不思議のダンジョン", "トルネコの大冒険"],
+  "mean": "<p>『<strong>ローグライク</strong>』とは、ダンジョンを探索し、やられたら最初からやり直しになるタイプのゲームを指すジャンル名のことです。</p><p>マップや敵の配置が毎回ランダムに変わるため、同じ展開は二度とありません。緊張感がずっと続くので、油断できないところが魅力だと思います。</p>",
+  "content": "<p>名前の由来は、<strong>1980年</strong>にアメリカの大学生が作ったパソコン用ゲーム『Rogue』です。当時はカリフォルニア大学サンタクルーズ校の学生、Michael ToyさんとGlenn Wichmanさんが開発しました。</p><p>『Rogue』は無料で配布され、コンピューターを使う学生たちの間に広まりました。ダンジョンの地図やアイテムの配置が<strong>毎回ランダムに生成される仕組み</strong>が新鮮で、似た作品が次々と作られていきます。</p><p>こうした後継ゲームは、「Rogueのようなゲーム」という意味で<strong>ローグライク</strong>と呼ばれるようになりました。のちに加わったケン・アーノルドさんが画面表示の技術を磨いたことも、人気を後押ししたとされています。</p><p>日本でこの仕組みが広く知られたきっかけは、<strong>1993年</strong>にチュンソフトが発売した『トルネコの大冒険 不思議のダンジョン』です。以降、「不思議のダンジョン」シリーズとして定着しました。</p><p><em>海外生まれの仕組みが、日本では別の名前で広まった</em>のは面白いところですよね。近年はインディーゲームを中心に、ローグライクを名乗る作品が世界的に増えています。</p>",
+  "sources": [{"title": "インサイド「ローグライクゲームとは何か」", "url": "https://www.inside-games.jp/article/2015/06/26/88869.html"}, {"title": "Wikipedia（英語版）『Rogue (video game)』", "url": "https://en.wikipedia.org/wiki/Rogue_(video_game)"}]
+}

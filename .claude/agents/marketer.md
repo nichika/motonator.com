@@ -17,3 +17,8 @@ tools: Read, Write, Glob, Grep
 
 ## 保存
 `content/marketing/YYYY-MM-DD.md`（日付は呼び出し元が指定）。
+
+## URLと計測（UTM）
+- 投稿文のURLは、`{URL}` の後ろに計測用パラメータを付けて書く。X用: `{URL}?utm_source=x&utm_medium=social&utm_campaign=YYYYMMDD`、Threads用: `{URL}?utm_source=threads&utm_medium=social&utm_campaign=YYYYMMDD`（YYYYMMDDは記事の公開予定日）。GA4で「どのSNSの、どの日の投稿から来たか」が分かる。
+- XもThreadsも、本文に解説を入れて、リンクは本文の最後に置く。Xでは、反応が欲しい場合、リンクを返信（リプライ）に分ける案も併記してよい。
+- 作品のスクリーンショットや長いセリフの引用は使わない。実在の人物を揶揄しない。投稿は人間が行う。

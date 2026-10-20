@@ -75,32 +75,27 @@
 						<?php the_content(); ?>
 					</div>
 				</div>
-				<div class="share">
-					<h3>この元ネタをみんなにシェアしよう！</h3>
+				<?php
+				$share_url = get_permalink($post->ID);
+				$share_title = '「' . $post->post_title . '」の元ネタ・意味とは？';
+				$share_networks = [
+					'x' => ['X', 'https://twitter.com/intent/tweet?text=%1$s&url=%2$s'],
+					'threads' => ['Threads', 'https://www.threads.net/intent/post?text=%1$s%%20%2$s'],
+					'line' => ['LINE', 'https://social-plugins.line.me/lineit/share?url=%2$s'],
+					'hatena' => ['はてブ', 'https://b.hatena.ne.jp/add?mode=confirm&url=%2$s&title=%1$s'],
+				];
+				?>
+				<div class="share-bar">
+					<p class="share-bar-title">この元ネタをシェアする</p>
 					<ul>
-						<li class="twitter">
+						<?php foreach($share_networks as $share_key => $share_net): ?>
 							<?php
-							$this_page_url = get_home_url() . '/' . $post->ID;
-							$twitter_text = urlencode('「' . $post->post_title . '」の元ネタ - ' . get_bloginfo());
-							$line_text = urlencode('「' . $post->post_title . '」の元ネタ' . get_bloginfo() . $this_page_url);
+							// UTM parameters show up in GA4 as "Social" traffic from this network.
+							$share_tracked = add_query_arg(['utm_source' => $share_key, 'utm_medium' => 'social', 'utm_campaign' => 'share_button'], $share_url);
+							$share_href = sprintf($share_net[1], rawurlencode($share_title . ' | ' . get_bloginfo('name')), rawurlencode($share_tracked));
 							?>
-							<a href="http://twitter.com/share?url=<?=urlencode($this_page_url)?>&text=<?=$twitter_text?>&hashtags=Motonater" target="_blank" rel="nofollow">
-								<b>Twitter</b><br>
-								でツイートする
-							</a>
-						</li>
-						<li class="facebook">
-							<a href="https://www.facebook.com/sharer/sharer.php?u=<?=urlencode($this_page_url)?>&src=sdkpreparse" target="_blank" rel="nofollow">
-								<b>Facebook</b><br>
-								でいいね！する
-							</a>
-						</li>
-						<li class="line">
-							<a href="line://msg/text/?<?=$line_text?>" target="_blank" rel="nofollow">
-								<b>LINE</b><br>
-								でシェアする
-							</a>
-						</li>
+							<li class="share-<?=esc_attr($share_key)?>"><a href="<?=esc_url($share_href)?>" target="_blank" rel="noopener nofollow"><?=esc_html($share_net[0])?></a></li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 				<?php

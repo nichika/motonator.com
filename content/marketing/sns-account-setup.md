@@ -6,8 +6,8 @@
 - **表示名**: `Motonator｜言葉の元ネタ解説`（候補: `Motonator（モトネーター）｜元ネタ解説`）
 - **ユーザー名（@）の候補**（取得できたもの）: `@motonator_com` ／ `@motonator_jp` ／ `@motonator_info`
   - サイト名に合わせて、XとThreads（Instagramと連動）で、できるだけ同じ名前にそろえる。
-- **アイコン**: サイトのアイコン画像（`public_html/wp-content/themes/motonator/img/icon-512.png`）。ロゴ入りで、サイトと同じオレンジ。
-- **ヘッダー画像**（Xのみ）: サイトのOGP画像（`img/ogp-default.png`）、または橙色の背景にサイト名だけのシンプルな画像。
+- **アイコン**: `content/marketing/assets/sns-icon-400x400.png`（サイトのアイコン。Xでは自動で丸く切り抜かれる）。
+- **ヘッダー画像**（Xのみ）: `content/marketing/assets/x-header-1500x500.png`（橙色の背景にロゴとキャッチコピー。Xの推奨サイズ1500×500。中央に要素を置いてあり、スマホ・PCどちらでも切れにくい）。
 
 ## 2. プロフィール文（コピペ用）
 ### X（160字以内）

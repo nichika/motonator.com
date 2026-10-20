@@ -1,0 +1,36 @@
+name: Post new articles to Threads
+
+on:
+  schedule:
+    # 12:00 JST every day. Only articles that a human has already published are posted.
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only print the posts, do not publish (true/false)"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write
+
+jobs:
+  threads:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Post to Threads
+        env:
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: node scripts/post-to-threads.mjs
+
+      - name: Commit the posting state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          [ -f content/.social-state.json ] && git add content/.social-state.json
+          git diff --cached --quiet || (git commit -m "Record Threads posting state [skip ci]" && for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done)

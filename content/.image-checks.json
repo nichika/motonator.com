@@ -24,5 +24,5 @@
   "wagashougai-ni-ippen-no-kuinashi.json": { "date": "2026-10-20", "result": "OK", "note": "石畳に立つ1本のキャンドル。image_promptに忠実。" },
   "tung-tung-tung-sahur.json": { "date": "2026-10-20", "result": "OK", "note": "夜明け空を背景にした木製の太鼓と音波リップル。image_promptに忠実。" },
   "yuruse-sasuke-kore-de-saigo-da.json": { "date": "2026-10-20", "result": "OK", "note": "夕暮れ空を背景に垂れ下がる赤いモミジの葉。image_promptに忠実。" },
-  "daga-kotowaru.json": { "date": "2026-10-20", "result": "OK", "note": "差し替え後の画像（daga-kotowaru-1.jpg）を目視確認。ドアと草原のみで文字なし。10/20朝のチェックは旧画像を見た誤判定の疑い。" },
+  "daga-kotowaru.json": { "date": "2026-10-20", "result": "OK", "note": "差し替え後の画像（daga-kotowaru-1.jpg）を目視確認。ドアと草原のみで文字なし。10/20朝のチェックは旧画像を見た誤判定の疑い。" }
 }

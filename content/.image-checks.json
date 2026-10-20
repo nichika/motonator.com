@@ -24,7 +24,5 @@
   "wagashougai-ni-ippen-no-kuinashi.json": { "date": "2026-10-20", "result": "OK", "note": "石畳に立つ1本のキャンドル。image_promptに忠実。" },
   "tung-tung-tung-sahur.json": { "date": "2026-10-20", "result": "OK", "note": "夜明け空を背景にした木製の太鼓と音波リップル。image_promptに忠実。" },
   "yuruse-sasuke-kore-de-saigo-da.json": { "date": "2026-10-20", "result": "OK", "note": "夕暮れ空を背景に垂れ下がる赤いモミジの葉。image_promptに忠実。" },
-  "daga-kotowaru.json": { "date": "2026-10-20", "result": "要差し替え", "note": "ドア・草原・朝日は良いが、右手前に「STOP」の文字が読める標識が写り込んでいる（文字禁止に抵触）。" },
-  "edo-bashiri.json": { "date": "2026-10-20", "result": "要差し替え", "note": "静止した人物の素足とビーチサンダルのクローズアップで、走法を紹介する記事の雰囲気と不一致。藁草履・疾走感が表現されておらず、脚のクローズアップが不要に身体的。" },
-  "ore-no-jinsei-hanbun-yarukara.json": { "date": "2026-10-20", "result": "要差し替え", "note": "2枚のチケットに「TAHL」「WARREN THE WORRY」という読める文字化け文字列が写り込んでいる（文字禁止に抵触）。" }
+  "daga-kotowaru.json": { "date": "2026-10-20", "result": "OK", "note": "差し替え後の画像（daga-kotowaru-1.jpg）を目視確認。ドアと草原のみで文字なし。10/20朝のチェックは旧画像を見た誤判定の疑い。" },
 }

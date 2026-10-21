@@ -1,0 +1,11 @@
+{
+  "image_prompt": "Colorful falling geometric blocks fading into a soft night sky with stars, like the moment between waking and dreaming",
+  "title": "テトリス効果",
+  "ruby": "テトリスこうか",
+  "genre": ["ゲーム"],
+  "work": ["TETRIS EFFECT"],
+  "etc": ["フロー状態", "パズルゲーム", "水口哲也"],
+  "mean": "<p>『<strong>テトリス効果</strong>』とは、テトリスを長時間プレイしたあと、<strong>目を閉じても落ちてくるブロックが見えたり、日常の風景までブロックのように見えてしまう現象</strong>のことです。</p><p>本棚のすき間を見て「ここにブロックを入れたら消える」と思ってしまう、なんて話もよく聞きます。</p><p>テトリス以外のゲームでも似たことは起こるとされますが、<em>テトリス効果</em>という名前の知名度が圧倒的です。</p>",
+  "content": "<p>この言葉が広く知られるきっかけになったのは、雑誌Wiredに<strong>1994年</strong>に掲載されたジェフリー・ゴールドスミス氏の記事だとされています。自身が数週間テトリスに没頭した体験をもとに、この現象を名付けたという説が有力です。</p><p>その後、研究の対象にもなりました。カリフォルニア大学リバーサイド校の研究チームは、結果を待つ不安な時間にテトリスをプレイすると、<strong>不安が和らぎやすい</strong>ことを確認しています。</p><p>難易度が変化するタイプのテトリスをプレイした人ほど、「フロー状態」と呼ばれる没入感に入りやすく、不安の軽減も大きかったそうです。</p><p>この言葉を一気に有名にしたのが、ゲームクリエイター<strong>水口哲也</strong>氏による2018年のゲーム『TETRIS EFFECT』です。</p><p>光や音楽でテトリス効果そのものを増幅させ、<strong>新しい体験</strong>として作品にする、というコンセプトが話題になりました。</p><p>ただのパズルだと思っていたテトリスに、こんな奥深い名前が付いていたとは、個人的にも意外でした。</p>",
+  "sources": [{"title": "電ファミニコゲーマー『TETRIS EFFECTはいかにして生まれたか』", "url": "https://news.denfaminicogamer.jp/news/180918b"}, {"title": "GIGAZINE『テトリスが不安な気持ちを和らげてくれることが判明』", "url": "https://gigazine.net/news/20181105-tetris-ease-anxious-mind"}]
+}

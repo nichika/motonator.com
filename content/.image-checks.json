@@ -24,5 +24,15 @@
   "wagashougai-ni-ippen-no-kuinashi.json": { "date": "2026-10-20", "result": "OK", "note": "石畳に立つ1本のキャンドル。image_promptに忠実。" },
   "tung-tung-tung-sahur.json": { "date": "2026-10-20", "result": "OK", "note": "夜明け空を背景にした木製の太鼓と音波リップル。image_promptに忠実。" },
   "yuruse-sasuke-kore-de-saigo-da.json": { "date": "2026-10-20", "result": "OK", "note": "夕暮れ空を背景に垂れ下がる赤いモミジの葉。image_promptに忠実。" },
-  "daga-kotowaru.json": { "date": "2026-10-20", "result": "OK", "note": "差し替え後の画像（daga-kotowaru-1.jpg）を目視確認。ドアと草原のみで文字なし。10/20朝のチェックは旧画像を見た誤判定の疑い。" }
+  "daga-kotowaru.json": { "date": "2026-10-20", "result": "OK", "note": "差し替え後の画像（daga-kotowaru-1.jpg）を目視確認。ドアと草原のみで文字なし。10/20朝のチェックは旧画像を見た誤判定の疑い。" },
+  "edo-bashiri.json": { "date": "2026-10-21", "result": "OK", "note": "石畳の草履と土埃。image_promptに忠実。" },
+  "ore-no-jinsei-hanbun-yarukara.json": { "date": "2026-10-21", "result": "OK", "note": "ベンチで合わさる紙のハート。image_promptに忠実。" },
+  "frenemy.json": { "date": "2026-10-21", "result": "OK", "note": "絡み合う2色のリボン。image_promptに忠実。" },
+  "kaeruka-genshou.json": { "date": "2026-10-21", "result": "OK", "note": "クッションのカエルと王冠、ハート形の光。image_promptに忠実。" },
+  "kaiwai.json": { "date": "2026-10-21", "result": "OK", "note": "地図に重なる色違いの円。image_promptに忠実。" },
+  "keikaku-doori.json": { "date": "2026-10-21", "result": "OK", "note": "螺旋状に並ぶドミノの連鎖。image_promptに忠実。" },
+  "kore-wa-doku-desu.json": { "date": "2026-10-21", "result": "OK", "note": "ティーカップと萎れた花、疑問符型の湯気。image_promptに忠実。" },
+  "oyagacha.json": { "date": "2026-10-21", "result": "OK", "note": "ガチャガチャ機械と家形のカプセル。image_promptに忠実。" },
+  "roguelike.json": { "date": "2026-10-21", "result": "OK", "note": "羊皮紙の渦巻き迷路とサイコロ。image_promptに忠実。" },
+  "seisatsu-yodatsu.json": { "date": "2026-10-21", "result": "OK", "note": "天秤の上の小鳥と石、満月。image_promptに忠実。" }
 }

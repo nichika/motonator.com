@@ -1,0 +1,14 @@
+{
+  "image_prompt": "Flowing sound waves gradually morphing into glowing streams of binary code in the air",
+  "title": "バイブコーディング",
+  "ruby": "",
+  "genre": ["ネット用語"],
+  "work": [],
+  "etc": ["AI", "プログラミング", "Collins Dictionary", "今年の言葉"],
+  "mean": "<p>『<strong>バイブコーディング</strong>』とは、AIに自然言語で指示を出し、コードの中身を細かく確認せずにアプリやプログラムを作る開発スタイルのことです。</p><p>「vibe（雰囲気）」で作る、という意味の新しい言葉です。</p><p>キーボードをほとんど触らずにソフトが形になっていくと聞くと、驚く方も多いのではないでしょうか。</p>",
+  "content": "<p>この言葉を生み出したのは<strong>Andrej Karpathy</strong>氏です。OpenAIの共同創業者で、AI研究者として知られています。</p><p>2025年2月2日、同氏はX（旧Twitter）に「新しい種類のコーディング」として投稿しました。AIコーディングツールを音声で操作し、「ほとんどキーボードに触れない」と紹介したのです。</p><p>完璧ではないものの「だいたい動く」ことをよしとするこのスタイルは、<em>見て話すだけでアプリが作れる</em>手法として注目を集めました。投稿は1か月で2万7000件以上の「いいね」を獲得したそうです。</p><p>その後、コードの中身を把握しないまま開発が進んでしまう弊害も指摘されるようになりました。「バイブコーディングは簡単、バイブデバッグの方が大変」という投稿も話題になりました。</p><p>そして<strong>2025年11月6日</strong>、イギリスの辞書出版社コリンズが発表する「<strong>2025年の言葉</strong>」にこの言葉が選ばれました。AIが暮らしのあらゆる場面に入り込む時代の空気を映した選出だと言えそうです。</p>",
+  "sources": [
+    {"title": "Know Your Meme『Vibe Coding』", "url": "https://knowyourmeme.com/memes/vibe-coding"},
+    {"title": "Gulf News「Vibe coding named Word of the Year by Collins Dictionary」", "url": "https://gulfnews.com/world/europe/vibe-coding-named-word-of-the-year-by-collins-dictionary-2-1.500337462"}
+  ]
+}

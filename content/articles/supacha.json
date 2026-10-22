@@ -1,0 +1,14 @@
+{
+  "image_prompt": "A glowing speech bubble with small coins raining down inside it, set against a dark stage spotlight background",
+  "title": "スパチャ",
+  "ruby": "スーパーチャット",
+  "genre": ["ネット用語"],
+  "work": [],
+  "etc": ["VTuber", "YouTube Live", "投げ銭", "配信"],
+  "mean": "<p>『<strong>スパチャ</strong>』とは、YouTubeのライブ配信機能「スーパーチャット（Super Chat）」の略称です。</p><p>視聴者が<strong>お金を払って送る特別なコメント</strong>のことで、配信者を応援する投げ銭のような仕組みです。</p><p>金額が高いほどコメントが目立つ色になり、チャット欄に長く表示されます。</p>",
+  "content": "<p>スパチャが生まれたのは<strong>2017年1月</strong>です。YouTubeが現地時間1月12日に、ライブ配信中の新機能「Super Chat」を正式に発表しました。</p><p>仕組みはシンプルで、視聴者が決まった金額を支払うと、自分のコメントが色付きでチャット欄に固定表示されます。金額が上がるほど<strong>固定される時間</strong>も長くなり、最大で5時間続くとされました。</p><p>日本でも1月13日には早速ニュースサイトで取り上げられ、「お布施機能」として紹介されました。</p><p>当初は人気配信者を対象にしたベータ版としてスタートし、その後じわじわと一般の配信者にも広がっていきました。</p><p>今ではVTuberの配信などで当たり前のように見かける言葉になりましたが、始まりはわずか<em>数年前</em>のことだと思うと、普及の早さに驚きます。</p>",
+  "sources": [
+    {"title": "TechCrunch「YouTube launches Super Chat, a way for creators to make money from their live streams」", "url": "https://techcrunch.com/2017/01/12/youtube-launches-super-chat-a-way-for-creators-to-make-money-from-their-live-streams/"},
+    {"title": "Impress Watch「YouTube Live、お布施をすると自分の発言がコメント欄に張り付くように」", "url": "https://pc.watch.impress.co.jp/docs/news/1038965.html"}
+  ]
+}

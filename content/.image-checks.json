@@ -37,12 +37,10 @@
   "seisatsu-yodatsu.json": { "date": "2026-10-21", "result": "OK", "note": "天秤の上の小鳥と石、満月。image_promptに忠実。" },
   "omae-ga-shinjiru-omae-wo-shinjiro.json": { "date": "2026-10-22", "result": "OK", "note": "光の柱と光輪。文字・キャラクターなし。image_promptとは完全一致ではないが方向性は合致。" },
   "brainrot.json": { "date": "2026-10-22", "result": "OK", "note": "暗室で光るスマホ画面と煙状のノイズ。image_promptに忠実。" },
-  "kamehameha.json": { "date": "2026-10-22", "result": "要差し替え", "note": "両手を左右に広げ中央に光を収束・発射する構図が『かめはめ波』の決めポーズを強く想起させる。代案: A golden sunburst rising over a calm tropical ocean horizon, framed by silhouettes of palm trees and gentle waves, no human figures." },
   "kanojo-no-tame-nara-bakemono-ni-datte-natte-yaru.json": { "date": "2026-10-22", "result": "OK", "note": "暗い森の中で光るランタン。image_promptに忠実、キャラクター要素なし。" },
   "metroidvania.json": { "date": "2026-10-22", "result": "OK", "note": "鍵と連結した扉の廊下。image_promptに忠実、両原作のキャラクター/意匠なし。" },
   "ore-wa-ore-no-koto-wo-suki-na-hito-ga-suki-da.json": { "date": "2026-10-22", "result": "OK", "note": "差し伸べた手に乗る紙のハート。image_promptに忠実。" },
   "puppet-sunsun.json": { "date": "2026-10-22", "result": "OK", "note": "人形のいない空の人形劇舞台。image_promptに忠実、人形自体なし。" },
-  "sixtyseven.json": { "date": "2026-10-22", "result": "要差し替え", "note": "両手首の間に出所不明の縦長オブジェクト（AI生成アーティファクト）が写り込み誤解を招く恐れ。代案: Two open palms raised side by side, palms facing gently upward, with a few small musical notes softly floating above them against a plain warm background." },
   "skibiditoilet.json": { "date": "2026-10-22", "result": "OK", "note": "タイル壁の配管と蛇口。image_promptに忠実、便器やキャラクターなし。" },
   "tetris-effect.json": { "date": "2026-10-22", "result": "OK", "note": "散らばる単体の立方体と星空。テトリミノ特有の連結形状・公式配色の再現なし。" }
 }

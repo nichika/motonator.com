@@ -1,0 +1,11 @@
+{
+  "image_prompt": "Glowing directional arrow symbols and two small round light markers floating in sequence across a dark starry background, leaving a soft trailing glow",
+  "title": "コナミコマンド",
+  "ruby": "",
+  "genre": ["ゲーム"],
+  "work": ["グラディウス"],
+  "etc": ["隠しコマンド", "裏技", "橋本和久"],
+  "mean": "<p>『コナミコマンド』とは、「<strong>↑↑↓↓←→←→BA</strong>」という入力をすると特典やパワーアップが起きる、伝説の裏技コマンドのことです。</p><p>コナミのゲームを中心に、長年にわたってさまざまな作品にこっそり仕込まれてきました。知っている人なら、つい指が覚えている入力かもしれませんね。</p>",
+  "content": "<p>このコマンドが生まれたのは<strong>1986年</strong>、ファミコン版『グラディウス』の開発中でした。</p><p>移植を担当したプログラマーの<strong>橋本和久さん</strong>は、アーケード版をそのまま移植すると難易度が高すぎると感じました。そこでデバッグ用に、自機を強化できる裏コマンドを組み込んだのです。</p><p>橋本さんは2003年のインタビューで「明らかに自分ではクリアすることができなかった」とコマンドを組み込んだ理由を語っています。「<em>私自身がコマンドを使うつもりだったので、覚えやすいものとした</em>」とも述べており、このデバッグ用コマンドはそのまま製品版にも残りました。</p><p>結果的にこの裏技は人気を呼び、以降の<strong>『グラディウス』シリーズ</strong>や『サイレントヒル』など、数多くのコナミ作品に受け継がれていきました。いつしか「コナミコマンド」として広く知られる存在になったわけですね。</p><p>橋本さんは2020年に亡くなりましたが、2026年にはコマンド誕生から<strong>40周年</strong>を迎えました。コナミは記念サイトや楽曲配信などの企画を展開しています。長年愛されてきた裏技が、今も語り継がれているのは嬉しいことですよね。</p>",
+  "sources": [{"title": "Game*Spark「コナミコマンド発案者の橋本和久氏が逝去」", "url": "https://www.gamespark.jp/article/2020/02/27/97056.html"}, {"title": "GIGAZINE「『コナミコマンド』生みの親、橋本和久氏が死去」", "url": "https://gigazine.net/news/20200227-konami-code-kazuhisa-hashimoto-passed-away/"}, {"title": "Game*Spark「コナミコマンド40周年の記念企画」", "url": "https://www.gamespark.jp/article/2026/04/24/165628.html"}]
+}

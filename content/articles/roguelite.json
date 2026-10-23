@@ -1,0 +1,11 @@
+{
+  "image_prompt": "An hourglass where the falling sand keeps rearranging into new maze patterns, with one golden key resting unchanged at the bottom",
+  "title": "ローグライト",
+  "ruby": "",
+  "genre": ["ゲーム"],
+  "work": [],
+  "etc": ["ローグライク", "ベルリン解釈", "Balatro"],
+  "mean": "<p>『ローグライト』とは、<strong>ローグライクの要素を一部だけゆるく取り入れたゲーム</strong>を指すジャンル名です。</p><p>マップがランダムに変わる、死んだらやり直しになるなど、ローグライクらしい仕組みの一部だけを使っているのが特徴です。厳密なルールにこだわらない、<em>自由な遊び心のあるジャンル</em>とも言えますね。</p>",
+  "content": "<p>そもそも「ローグライク」は、<strong>1980年</strong>のパソコンゲーム『Rogue』のような仕組みを持つ作品群を指す言葉でした。</p><p>ところが似た作品が増えるにつれ、<strong>どこまでをローグライクと呼ぶべきか</strong>という線引きが曖昧になっていきます。</p><p>そこで<strong>2008年</strong>、International Roguelike Development Conferenceという国際会議で、ランダムなマップ生成やパーマデス（一度死んだらやり直し）など計8項目からなる厳密な定義が示されました。これは「ベルリン解釈」と呼ばれています。</p><p>この定義をすべて満たす作品が「ローグライク」で、一部だけをゆるく取り入れた作品を区別するために使われるようになったのが「ローグライト」です。死んでもアイテムを一部持ち越せるなど、<strong>ルールの一部だけ緩和</strong>されているのがポイントです。</p><p>近年は『Balatro』のように、ローグライトの要素を取り入れたインディーゲームが世界的にヒットしています。<em>厳密な定義から生まれた区分</em>が、いつの間にか人気ジャンルの代名詞になったのは面白い流れだと思います。</p>",
+  "sources": [{"title": "AUTOMATON「ローグライクとローグライトは何が違うのか」", "url": "https://automaton-media.com/articles/newsjp/20220429-200983/"}, {"title": "Game*Spark「中毒性で選ぶローグライト5選」", "url": "https://www.gamespark.jp/article/2025/12/30/161126.html"}]
+}

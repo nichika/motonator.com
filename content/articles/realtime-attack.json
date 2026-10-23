@@ -1,0 +1,11 @@
+{
+  "image_prompt": "A stopwatch and a joystick placed side by side on a plain background, the stopwatch's hands racing forward",
+  "title": "RTA",
+  "ruby": "リアルタイムアタック",
+  "genre": ["ゲーム"],
+  "work": [],
+  "etc": ["タイムアタック", "やり込み", "ゲーム実況"],
+  "mean": "<p>『<strong>RTA</strong>』とは「リアルタイムアタック」の略で、<strong>ゲームを起動してからクリアするまでの現実の経過時間</strong>を競う遊び方のことです。</p><p>ロード時間や会話シーンも全部込みで計測するのが特徴で、いかに無駄なく最短で進めるかが腕の見せどころになります。</p><p>ゲーム内の時間を競う「タイムアタック」とは区別され、<strong>画面の外の時計</strong>がそのまま記録になる点がポイントです。</p>",
+  "content": "<p>『RTA』という遊び方自体は、ゲームのやり込み文化のなかで古くから親しまれてきました。</p><p>ただ、RTAという言葉が一気に世の中に広まったきっかけは、<strong>2016年12月28日から3日間にわたって開催された「RTA in Japan」</strong>だと言われています。</p><p>このイベントでは<strong>40作品を超えるゲームのRTA</strong>が披露され、国内メディアからも「大規模オフラインRTAイベント」として紹介されました。</p><p>実際に顔を合わせてプレイを見せ合うオフライン形式のRTAイベントとしては、<strong>日本で初めての大型開催</strong>だったと報じられています。</p><p>この様子がインターネット配信を通じて広まり、普段ゲームをあまりしない人にも「RTA」という言葉が届くようになりました。ゲームを<em>早くクリアすること自体がエンタメになる</em>というのは、改めて考えると面白い現象ですよね。</p><p>以降もRTA in Japanは夏と冬に定期開催されるようになり、今では毎年多くのプレイヤーと視聴者が集まる人気イベントに成長しています。</p>",
+  "sources": [{"title": "automaton「大規模オフラインRTAイベント『RTA in Japan』が2016年12月28日より開催」", "url": "https://automaton-media.com/articles/newsjp/20170222-41006/"}, {"title": "automaton「日本初の大型RTAイベント『RTA in Japan』関連記事」", "url": "https://automaton-media.com/articles/newsjp/20170817-52592/"}]
+}

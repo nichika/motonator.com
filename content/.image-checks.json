@@ -42,5 +42,17 @@
   "ore-wa-ore-no-koto-wo-suki-na-hito-ga-suki-da.json": { "date": "2026-10-22", "result": "OK", "note": "差し伸べた手に乗る紙のハート。image_promptに忠実。" },
   "puppet-sunsun.json": { "date": "2026-10-22", "result": "OK", "note": "人形のいない空の人形劇舞台。image_promptに忠実、人形自体なし。" },
   "skibiditoilet.json": { "date": "2026-10-22", "result": "OK", "note": "タイル壁の配管と蛇口。image_promptに忠実、便器やキャラクターなし。" },
-  "tetris-effect.json": { "date": "2026-10-22", "result": "OK", "note": "散らばる単体の立方体と星空。テトリミノ特有の連結形状・公式配色の再現なし。" }
+  "tetris-effect.json": { "date": "2026-10-22", "result": "OK", "note": "散らばる単体の立方体と星空。テトリミノ特有の連結形状・公式配色の再現なし。" },
+  "kamehameha.json": { "date": "2026-10-23", "result": "OK", "note": "椰子のシルエット越しに海から昇る太陽。image_promptに忠実、キャラクター要素なし。" },
+  "sixtyseven.json": { "date": "2026-10-23", "result": "OK", "note": "太陽状の円と浮かぶ音符。image_promptに忠実。" },
+  "anya-peanut-ga-suki.json": { "date": "2026-10-23", "result": "OK", "note": "殻付きピーナッツとハート形の光。image_promptに忠実、版権キャラクターなし。※スキーマ順: titleが先頭キー（image_promptは先頭でない）" },
+  "compgacha.json": { "date": "2026-10-23", "result": "要差し替え", "note": "スタンプ中央に文字化けした読めない英字（STPISIOD風）が写り込み。代替image_prompt: 'A plain red circular stop-sign ring crossed diagonally over three colorful puzzle pieces that almost connect, no letters or symbols, soft warning glow around them'。※スキーマ順もtitleが先頭キー" },
+  "daijoubu-boku-saikyou-dakara.json": { "date": "2026-10-23", "result": "OK", "note": "ガラスランタンの中で揺れない炎と荒れる風。image_promptに忠実、キャラクター要素なし。※スキーマ順: titleが先頭キー" },
+  "gekiokopunpunmaru.json": { "date": "2026-10-23", "result": "OK", "note": "湯気を上げるケトルとハート型吹き出し。image_promptに忠実。" },
+  "himmel-wa-mou-inai-janai.json": { "date": "2026-10-23", "result": "OK", "note": "空の木製椅子に寄りかかるしおれた花と満月。image_promptに忠実、キャラクター要素なし。※スキーマ順: titleが先頭キー" },
+  "machigairu.json": { "date": "2026-10-23", "result": "OK", "note": "アリーナの観客席を背にした折りたたみ椅子。image_promptに忠実。" },
+  "supacha.json": { "date": "2026-10-23", "result": "要差し替え", "note": "吹き出しに降り注ぐ金貨の表面に「$」マークが刻印され文字相当。代替image_prompt: 'A glowing speech bubble with plain round golden coins (no symbols or marks) raining down inside it, set against a dark stage spotlight background'" },
+  "totsumachi.json": { "date": "2026-10-23", "result": "要差し替え", "note": "ダイヤル式電話のダイヤル穴の数字が0〜9の正しい配列でない文字化け数字。代替image_prompt: 'A glowing retro telephone receiver resting beside a softly lit microphone on a stand, both waiting quietly in warm light, no dial pad or numbers visible'" },
+  "uso-wa-tobikiri-no-ai-nandayo.json": { "date": "2026-10-23", "result": "OK", "note": "スポットライトのビームと金色の光の粒。image_promptに忠実、版権キャラクターなし。※スキーマ順: titleが先頭キー" },
+  "vibe-coding.json": { "date": "2026-10-23", "result": "要差し替え", "note": "渦巻く光の帯の中に乱数のような文字化け数字列が多数。代替image_prompt: 'Smooth glowing orange light trails swirling and flowing through the air like gentle wind currents, abstract and minimal.'" }
 }

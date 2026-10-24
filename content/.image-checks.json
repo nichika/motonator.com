@@ -1,58 +1,327 @@
 {
-  "40byo-de-shitaku-shina.json": { "date": "2026-10-19", "result": "OK", "note": "懐中時計と朝焼け。image_promptに忠実、文字・ロゴ・人物・キャラクターなし。" },
-  "biju.json": { "date": "2026-10-19", "result": "OK", "note": "ベルベット上の宝石ときらめき。image_promptに忠実。" },
-  "ehho-ehho.json": { "date": "2026-10-19", "result": "OK", "note": "砂地の足跡と羽根。image_promptに忠実。" },
-  "omae-no-mono-wa-ore-no-mono.json": { "date": "2026-10-19", "result": "OK", "note": "空の段ボール箱と溢れた箱。image_promptに忠実。" },
-  "sukisugite-horobu.json": { "date": "2026-10-19", "result": "OK", "note": "ハート形のきらめき。image_promptに忠実。" },
-  "waraeba-ii-to-omou-yo.json": { "date": "2026-10-19", "result": "OK", "note": "涙のしずく。image_promptに忠実。" },
-  "yamucha-shiyagatte.json": { "date": "2026-10-19", "result": "OK", "note": "焦げた足跡と煙。image_promptに忠実。" },
-  "yuube-wa-otanoshimi-deshita-ne.json": { "date": "2026-10-19", "result": "OK", "note": "三日月とランタン。image_promptに忠実。" },
-  "chappy.json": { "date": "2026-10-19", "result": "OK", "note": "吹き出しとキラキラ。image_promptに忠実。" },
-  "boku-to-keiyaku-shite-mahou-shoujo-ni-natte.json": { "date": "2026-10-19", "result": "OK", "note": "シャボン玉と夕暮れの丘。image_promptに忠実。" },
-  "i-am-the-bone-of-my-sword.json": { "date": "2026-10-19", "result": "OK", "note": "光る本。image_promptに忠実。" },
-  "kokoro-wo-moyase.json": { "date": "2026-10-19", "result": "OK", "note": "両手に灯る炎。image_promptに忠実。" },
-  "meroi.json": { "date": "2026-10-19", "result": "OK", "note": "ハート形のキャンドルワックス。image_promptに忠実。" },
-  "oyaji-nimo-butareta-koto-naino-ni.json": { "date": "2026-10-19", "result": "OK", "note": "手のシルエットと丸窓の光。image_promptに忠実。" },
-  "tada-no-ningen-niwa-kyoumi-arimasen.json": { "date": "2026-10-19", "result": "OK", "note": "教室の机と紙飛行機。image_promptに忠実。" },
-  "utsukushiku-saigo-wo-kazaritsukeru-hima-ga-areba.json": { "date": "2026-10-19", "result": "OK", "note": "鞘に収まった剣と夕焼け。image_promptに忠実。" },
-  "utteiinoha-utareru-kakugo.json": { "date": "2026-10-19", "result": "OK", "note": "光の筋。image_promptに忠実。" },
-  "senryoku-530000.json": { "date": "2026-10-20", "result": "OK", "note": "夜空に金色の光のバーストと放射状の光の筋。image_promptに忠実。" },
-  "chicken-jockey.json": { "date": "2026-10-20", "result": "OK", "note": "夜の草原で満月を背に走る白いニワトリ。image_promptに忠実。" },
-  "barou.json": { "date": "2026-10-20", "result": "OK", "note": "ギザギザ縁の漫画風吹き出し（中は空白）。image_promptに忠実。" },
-  "insta-bae.json": { "date": "2026-10-20", "result": "OK", "note": "マーブルテーブルのデザートとハート記号。image_promptに忠実。" },
-  "naruto-dance.json": { "date": "2026-10-20", "result": "OK", "note": "ジャンプする裸足と飛び散る音符。image_promptに忠実。" },
-  "wagashougai-ni-ippen-no-kuinashi.json": { "date": "2026-10-20", "result": "OK", "note": "石畳に立つ1本のキャンドル。image_promptに忠実。" },
-  "tung-tung-tung-sahur.json": { "date": "2026-10-20", "result": "OK", "note": "夜明け空を背景にした木製の太鼓と音波リップル。image_promptに忠実。" },
-  "yuruse-sasuke-kore-de-saigo-da.json": { "date": "2026-10-20", "result": "OK", "note": "夕暮れ空を背景に垂れ下がる赤いモミジの葉。image_promptに忠実。" },
-  "daga-kotowaru.json": { "date": "2026-10-20", "result": "OK", "note": "差し替え後の画像（daga-kotowaru-1.jpg）を目視確認。ドアと草原のみで文字なし。10/20朝のチェックは旧画像を見た誤判定の疑い。" },
-  "edo-bashiri.json": { "date": "2026-10-21", "result": "OK", "note": "石畳の草履と土埃。image_promptに忠実。" },
-  "ore-no-jinsei-hanbun-yarukara.json": { "date": "2026-10-21", "result": "OK", "note": "ベンチで合わさる紙のハート。image_promptに忠実。" },
-  "frenemy.json": { "date": "2026-10-21", "result": "OK", "note": "絡み合う2色のリボン。image_promptに忠実。" },
-  "kaeruka-genshou.json": { "date": "2026-10-21", "result": "OK", "note": "クッションのカエルと王冠、ハート形の光。image_promptに忠実。" },
-  "kaiwai.json": { "date": "2026-10-21", "result": "OK", "note": "地図に重なる色違いの円。image_promptに忠実。" },
-  "keikaku-doori.json": { "date": "2026-10-21", "result": "OK", "note": "螺旋状に並ぶドミノの連鎖。image_promptに忠実。" },
-  "kore-wa-doku-desu.json": { "date": "2026-10-21", "result": "OK", "note": "ティーカップと萎れた花、疑問符型の湯気。image_promptに忠実。" },
-  "oyagacha.json": { "date": "2026-10-21", "result": "OK", "note": "ガチャガチャ機械と家形のカプセル。image_promptに忠実。" },
-  "roguelike.json": { "date": "2026-10-21", "result": "OK", "note": "羊皮紙の渦巻き迷路とサイコロ。image_promptに忠実。" },
-  "seisatsu-yodatsu.json": { "date": "2026-10-21", "result": "OK", "note": "天秤の上の小鳥と石、満月。image_promptに忠実。" },
-  "omae-ga-shinjiru-omae-wo-shinjiro.json": { "date": "2026-10-22", "result": "OK", "note": "光の柱と光輪。文字・キャラクターなし。image_promptとは完全一致ではないが方向性は合致。" },
-  "brainrot.json": { "date": "2026-10-22", "result": "OK", "note": "暗室で光るスマホ画面と煙状のノイズ。image_promptに忠実。" },
-  "kanojo-no-tame-nara-bakemono-ni-datte-natte-yaru.json": { "date": "2026-10-22", "result": "OK", "note": "暗い森の中で光るランタン。image_promptに忠実、キャラクター要素なし。" },
-  "metroidvania.json": { "date": "2026-10-22", "result": "OK", "note": "鍵と連結した扉の廊下。image_promptに忠実、両原作のキャラクター/意匠なし。" },
-  "ore-wa-ore-no-koto-wo-suki-na-hito-ga-suki-da.json": { "date": "2026-10-22", "result": "OK", "note": "差し伸べた手に乗る紙のハート。image_promptに忠実。" },
-  "puppet-sunsun.json": { "date": "2026-10-22", "result": "OK", "note": "人形のいない空の人形劇舞台。image_promptに忠実、人形自体なし。" },
-  "skibiditoilet.json": { "date": "2026-10-22", "result": "OK", "note": "タイル壁の配管と蛇口。image_promptに忠実、便器やキャラクターなし。" },
-  "tetris-effect.json": { "date": "2026-10-22", "result": "OK", "note": "散らばる単体の立方体と星空。テトリミノ特有の連結形状・公式配色の再現なし。" },
-  "kamehameha.json": { "date": "2026-10-23", "result": "OK", "note": "椰子のシルエット越しに海から昇る太陽。image_promptに忠実、キャラクター要素なし。" },
-  "sixtyseven.json": { "date": "2026-10-23", "result": "OK", "note": "太陽状の円と浮かぶ音符。image_promptに忠実。" },
-  "anya-peanut-ga-suki.json": { "date": "2026-10-23", "result": "OK", "note": "殻付きピーナッツとハート形の光。image_promptに忠実、版権キャラクターなし。※スキーマ順: titleが先頭キー（image_promptは先頭でない）" },
-  "compgacha.json": { "date": "2026-10-23", "result": "要差し替え", "note": "スタンプ中央に文字化けした読めない英字（STPISIOD風）が写り込み。代替image_prompt: 'A plain red circular stop-sign ring crossed diagonally over three colorful puzzle pieces that almost connect, no letters or symbols, soft warning glow around them'。※スキーマ順もtitleが先頭キー" },
-  "daijoubu-boku-saikyou-dakara.json": { "date": "2026-10-23", "result": "OK", "note": "ガラスランタンの中で揺れない炎と荒れる風。image_promptに忠実、キャラクター要素なし。※スキーマ順: titleが先頭キー" },
-  "gekiokopunpunmaru.json": { "date": "2026-10-23", "result": "OK", "note": "湯気を上げるケトルとハート型吹き出し。image_promptに忠実。" },
-  "himmel-wa-mou-inai-janai.json": { "date": "2026-10-23", "result": "OK", "note": "空の木製椅子に寄りかかるしおれた花と満月。image_promptに忠実、キャラクター要素なし。※スキーマ順: titleが先頭キー" },
-  "machigairu.json": { "date": "2026-10-23", "result": "OK", "note": "アリーナの観客席を背にした折りたたみ椅子。image_promptに忠実。" },
-  "supacha.json": { "date": "2026-10-23", "result": "要差し替え", "note": "吹き出しに降り注ぐ金貨の表面に「$」マークが刻印され文字相当。代替image_prompt: 'A glowing speech bubble with plain round golden coins (no symbols or marks) raining down inside it, set against a dark stage spotlight background'" },
-  "totsumachi.json": { "date": "2026-10-23", "result": "要差し替え", "note": "ダイヤル式電話のダイヤル穴の数字が0〜9の正しい配列でない文字化け数字。代替image_prompt: 'A glowing retro telephone receiver resting beside a softly lit microphone on a stand, both waiting quietly in warm light, no dial pad or numbers visible'" },
-  "uso-wa-tobikiri-no-ai-nandayo.json": { "date": "2026-10-23", "result": "OK", "note": "スポットライトのビームと金色の光の粒。image_promptに忠実、版権キャラクターなし。※スキーマ順: titleが先頭キー" },
-  "vibe-coding.json": { "date": "2026-10-23", "result": "要差し替え", "note": "渦巻く光の帯の中に乱数のような文字化け数字列が多数。代替image_prompt: 'Smooth glowing orange light trails swirling and flowing through the air like gentle wind currents, abstract and minimal.'" }
+  "40byo-de-shitaku-shina.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "懐中時計と朝焼け。image_promptに忠実、文字・ロゴ・人物・キャラクターなし。"
+  },
+  "biju.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "ベルベット上の宝石ときらめき。image_promptに忠実。"
+  },
+  "ehho-ehho.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "砂地の足跡と羽根。image_promptに忠実。"
+  },
+  "omae-no-mono-wa-ore-no-mono.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "空の段ボール箱と溢れた箱。image_promptに忠実。"
+  },
+  "sukisugite-horobu.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "ハート形のきらめき。image_promptに忠実。"
+  },
+  "waraeba-ii-to-omou-yo.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "涙のしずく。image_promptに忠実。"
+  },
+  "yamucha-shiyagatte.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "焦げた足跡と煙。image_promptに忠実。"
+  },
+  "yuube-wa-otanoshimi-deshita-ne.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "三日月とランタン。image_promptに忠実。"
+  },
+  "chappy.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "吹き出しとキラキラ。image_promptに忠実。"
+  },
+  "boku-to-keiyaku-shite-mahou-shoujo-ni-natte.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "シャボン玉と夕暮れの丘。image_promptに忠実。"
+  },
+  "i-am-the-bone-of-my-sword.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "光る本。image_promptに忠実。"
+  },
+  "kokoro-wo-moyase.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "両手に灯る炎。image_promptに忠実。"
+  },
+  "meroi.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "ハート形のキャンドルワックス。image_promptに忠実。"
+  },
+  "oyaji-nimo-butareta-koto-naino-ni.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "手のシルエットと丸窓の光。image_promptに忠実。"
+  },
+  "tada-no-ningen-niwa-kyoumi-arimasen.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "教室の机と紙飛行機。image_promptに忠実。"
+  },
+  "utsukushiku-saigo-wo-kazaritsukeru-hima-ga-areba.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "鞘に収まった剣と夕焼け。image_promptに忠実。"
+  },
+  "utteiinoha-utareru-kakugo.json": {
+    "date": "2026-10-19",
+    "result": "OK",
+    "note": "光の筋。image_promptに忠実。"
+  },
+  "senryoku-530000.json": {
+    "date": "2026-10-20",
+    "result": "OK",
+    "note": "夜空に金色の光のバーストと放射状の光の筋。image_promptに忠実。"
+  },
+  "chicken-jockey.json": {
+    "date": "2026-10-20",
+    "result": "OK",
+    "note": "夜の草原で満月を背に走る白いニワトリ。image_promptに忠実。"
+  },
+  "barou.json": {
+    "date": "2026-10-20",
+    "result": "OK",
+    "note": "ギザギザ縁の漫画風吹き出し（中は空白）。image_promptに忠実。"
+  },
+  "insta-bae.json": {
+    "date": "2026-10-20",
+    "result": "OK",
+    "note": "マーブルテーブルのデザートとハート記号。image_promptに忠実。"
+  },
+  "naruto-dance.json": {
+    "date": "2026-10-20",
+    "result": "OK",
+    "note": "ジャンプする裸足と飛び散る音符。image_promptに忠実。"
+  },
+  "wagashougai-ni-ippen-no-kuinashi.json": {
+    "date": "2026-10-20",
+    "result": "OK",
+    "note": "石畳に立つ1本のキャンドル。image_promptに忠実。"
+  },
+  "tung-tung-tung-sahur.json": {
+    "date": "2026-10-20",
+    "result": "OK",
+    "note": "夜明け空を背景にした木製の太鼓と音波リップル。image_promptに忠実。"
+  },
+  "yuruse-sasuke-kore-de-saigo-da.json": {
+    "date": "2026-10-20",
+    "result": "OK",
+    "note": "夕暮れ空を背景に垂れ下がる赤いモミジの葉。image_promptに忠実。"
+  },
+  "daga-kotowaru.json": {
+    "date": "2026-10-20",
+    "result": "OK",
+    "note": "差し替え後の画像（daga-kotowaru-1.jpg）を目視確認。ドアと草原のみで文字なし。10/20朝のチェックは旧画像を見た誤判定の疑い。"
+  },
+  "edo-bashiri.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "石畳の草履と土埃。image_promptに忠実。"
+  },
+  "ore-no-jinsei-hanbun-yarukara.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "ベンチで合わさる紙のハート。image_promptに忠実。"
+  },
+  "frenemy.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "絡み合う2色のリボン。image_promptに忠実。"
+  },
+  "kaeruka-genshou.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "クッションのカエルと王冠、ハート形の光。image_promptに忠実。"
+  },
+  "kaiwai.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "地図に重なる色違いの円。image_promptに忠実。"
+  },
+  "keikaku-doori.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "螺旋状に並ぶドミノの連鎖。image_promptに忠実。"
+  },
+  "kore-wa-doku-desu.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "ティーカップと萎れた花、疑問符型の湯気。image_promptに忠実。"
+  },
+  "oyagacha.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "ガチャガチャ機械と家形のカプセル。image_promptに忠実。"
+  },
+  "roguelike.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "羊皮紙の渦巻き迷路とサイコロ。image_promptに忠実。"
+  },
+  "seisatsu-yodatsu.json": {
+    "date": "2026-10-21",
+    "result": "OK",
+    "note": "天秤の上の小鳥と石、満月。image_promptに忠実。"
+  },
+  "omae-ga-shinjiru-omae-wo-shinjiro.json": {
+    "date": "2026-10-22",
+    "result": "OK",
+    "note": "光の柱と光輪。文字・キャラクターなし。image_promptとは完全一致ではないが方向性は合致。"
+  },
+  "brainrot.json": {
+    "date": "2026-10-22",
+    "result": "OK",
+    "note": "暗室で光るスマホ画面と煙状のノイズ。image_promptに忠実。"
+  },
+  "kanojo-no-tame-nara-bakemono-ni-datte-natte-yaru.json": {
+    "date": "2026-10-22",
+    "result": "OK",
+    "note": "暗い森の中で光るランタン。image_promptに忠実、キャラクター要素なし。"
+  },
+  "metroidvania.json": {
+    "date": "2026-10-22",
+    "result": "OK",
+    "note": "鍵と連結した扉の廊下。image_promptに忠実、両原作のキャラクター/意匠なし。"
+  },
+  "ore-wa-ore-no-koto-wo-suki-na-hito-ga-suki-da.json": {
+    "date": "2026-10-22",
+    "result": "OK",
+    "note": "差し伸べた手に乗る紙のハート。image_promptに忠実。"
+  },
+  "puppet-sunsun.json": {
+    "date": "2026-10-22",
+    "result": "OK",
+    "note": "人形のいない空の人形劇舞台。image_promptに忠実、人形自体なし。"
+  },
+  "skibiditoilet.json": {
+    "date": "2026-10-22",
+    "result": "OK",
+    "note": "タイル壁の配管と蛇口。image_promptに忠実、便器やキャラクターなし。"
+  },
+  "tetris-effect.json": {
+    "date": "2026-10-22",
+    "result": "OK",
+    "note": "散らばる単体の立方体と星空。テトリミノ特有の連結形状・公式配色の再現なし。"
+  },
+  "kamehameha.json": {
+    "date": "2026-10-23",
+    "result": "OK",
+    "note": "椰子のシルエット越しに海から昇る太陽。image_promptに忠実、キャラクター要素なし。"
+  },
+  "sixtyseven.json": {
+    "date": "2026-10-23",
+    "result": "OK",
+    "note": "太陽状の円と浮かぶ音符。image_promptに忠実。"
+  },
+  "anya-peanut-ga-suki.json": {
+    "date": "2026-10-23",
+    "result": "OK",
+    "note": "殻付きピーナッツとハート形の光。image_promptに忠実、版権キャラクターなし。※スキーマ順: titleが先頭キー（image_promptは先頭でない）"
+  },
+  "compgacha.json": {
+    "date": "2026-10-23",
+    "result": "要差し替え",
+    "note": "スタンプ中央に文字化けした読めない英字（STPISIOD風）が写り込み。代替image_prompt: 'A plain red circular stop-sign ring crossed diagonally over three colorful puzzle pieces that almost connect, no letters or symbols, soft warning glow around them'。※スキーマ順もtitleが先頭キー"
+  },
+  "daijoubu-boku-saikyou-dakara.json": {
+    "date": "2026-10-23",
+    "result": "OK",
+    "note": "ガラスランタンの中で揺れない炎と荒れる風。image_promptに忠実、キャラクター要素なし。※スキーマ順: titleが先頭キー"
+  },
+  "gekiokopunpunmaru.json": {
+    "date": "2026-10-23",
+    "result": "OK",
+    "note": "湯気を上げるケトルとハート型吹き出し。image_promptに忠実。"
+  },
+  "himmel-wa-mou-inai-janai.json": {
+    "date": "2026-10-23",
+    "result": "OK",
+    "note": "空の木製椅子に寄りかかるしおれた花と満月。image_promptに忠実、キャラクター要素なし。※スキーマ順: titleが先頭キー"
+  },
+  "machigairu.json": {
+    "date": "2026-10-23",
+    "result": "OK",
+    "note": "アリーナの観客席を背にした折りたたみ椅子。image_promptに忠実。"
+  },
+  "supacha.json": {
+    "date": "2026-10-23",
+    "result": "要差し替え",
+    "note": "吹き出しに降り注ぐ金貨の表面に「$」マークが刻印され文字相当。代替image_prompt: 'A glowing speech bubble with plain round golden coins (no symbols or marks) raining down inside it, set against a dark stage spotlight background'"
+  },
+  "totsumachi.json": {
+    "date": "2026-10-23",
+    "result": "要差し替え",
+    "note": "ダイヤル式電話のダイヤル穴の数字が0〜9の正しい配列でない文字化け数字。代替image_prompt: 'A glowing retro telephone receiver resting beside a softly lit microphone on a stand, both waiting quietly in warm light, no dial pad or numbers visible'"
+  },
+  "uso-wa-tobikiri-no-ai-nandayo.json": {
+    "date": "2026-10-23",
+    "result": "OK",
+    "note": "スポットライトのビームと金色の光の粒。image_promptに忠実、版権キャラクターなし。※スキーマ順: titleが先頭キー"
+  },
+  "vibe-coding.json": {
+    "date": "2026-10-23",
+    "result": "要差し替え",
+    "note": "渦巻く光の帯の中に乱数のような文字化け数字列が多数。代替image_prompt: 'Smooth glowing orange light trails swirling and flowing through the air like gentle wind currents, abstract and minimal.'"
+  },
+  "egoist-bluelock.json": {
+    "date": "2026-10-24",
+    "result": "OK",
+    "note": "オレンジのスポットライトが空の台座を照らす構図。image_promptに忠実、文字・ロゴ・キャラクター要素なし。"
+  },
+  "ganbare-kakarotto.json": {
+    "date": "2026-10-24",
+    "result": "OK",
+    "note": "オレンジ背景でシルエットの拳が触れ合う構図。image_promptに忠実、特定作品の固有意匠なし。"
+  },
+  "konami-command.json": {
+    "date": "2026-10-24",
+    "result": "OK",
+    "note": "星空背景に発光する矢印と光点。image_promptに忠実、コントローラー造形や特定ゲームUIなし。"
+  },
+  "makenai-riyuu-iru.json": {
+    "date": "2026-10-24",
+    "result": "OK",
+    "note": "弧を描く軌跡とともに浮かぶボール。image_promptに忠実、特定ブランド/作品の固有マークなし。"
+  },
+  "omae-wo-tsuma-ni-suru.json": {
+    "date": "2026-10-24",
+    "result": "OK",
+    "note": "暖色背景に両手を合わせたシルエット。image_promptに概ね忠実、キャラクター要素なし。"
+  },
+  "realtime-attack.json": {
+    "date": "2026-10-24",
+    "result": "OK",
+    "note": "ストップウォッチとジョイスティック。数字の文字化けなし、image_promptに忠実。"
+  },
+  "roguelite.json": {
+    "date": "2026-10-24",
+    "result": "OK",
+    "note": "砂時計と迷路パターン、金色の鍵。image_promptに忠実、文字・キャラクターなし。"
+  },
+  "tetee.json": {
+    "date": "2026-10-24",
+    "result": "OK",
+    "note": "夜空に寄り添う2つの光る球体。image_promptに忠実、キャラクター要素なし。"
+  },
+  "trocon.json": {
+    "date": "2026-10-24",
+    "result": "OK",
+    "note": "金色のトロフィーと光の粒子。特定プラットフォームのロゴ・配色なし、image_promptに概ね忠実。"
+  }
 }
